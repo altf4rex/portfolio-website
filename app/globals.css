@@ -2,26 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "CPMono";
+  src: url("/fonts/CPMono_v07_Light.woff2") format("woff2");
+  font-weight: 300;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: "CPMono";
+  src: url("/fonts/CPMono_v07_Black.woff2") format("woff2");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "CPMono";
+  src: url("/fonts/CPMono_v07_Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "CPMono";
+  src: url("/fonts/CPMono_v07_ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "CPMono";
+  src: url("/fonts/CPMono_v07_Plain.woff2") format("woff2");
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #434243;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #272727;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #434243;
+  border-radius: 18px;
+}
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+html {
+  background-color: #080909;
+    font-size: 1.1vw;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "CPMono";
+  background-color: #080909;
+  /* max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+h1{
+  font-size: 45rem;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -10.13rem;
+}
+
+h2{
+  font-size: 18rem;
+  line-height: 0.72;
+  font-weight: 100;
+  letter-spacing: -2rem;
+}
+
+.text-main {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #B2B2B1;
+}
+
+.header{
+  color: #B2B2B1; 
+  font-style: normal;
+  
+  @supports (
+    (-webkit-text-fill-color: transparent) and
+    (-webkit-text-stroke-width: 0.1rem) and
+    (-webkit-text-stroke-color: #B2B2B1)
+  ) {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.1rem;
+    -webkit-text-stroke-color: #B2B2B1;
+  }
+}
+
+
+.wait{
+  overflow: hidden;
+}
+
+.wait-content{
+  position: relative;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-color: #080909;
+}
+
+.clock-arrow,
+.clock-center  {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.clock-arrow{
+  transform: translate(-80%, -80%);
+  transform-origin: 80% 80%;
 }
