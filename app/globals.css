@@ -114,6 +114,17 @@ h2{
 }
 
 
+.clock-arrow,
+.clock-center  {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.clock-arrow{
+  transform: translate(-80%, -80%);
+  transform-origin: 80% 80%;
+}
+
 .wait{
   overflow: hidden;
 }
@@ -126,12 +137,17 @@ h2{
   background-color: #080909;
 }
 
-.clock-arrow,
-.clock-center  {
-  position: absolute;
-  transform: translate(-50%, -50%);
+/* @keyframes fillDash {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
-.clock-arrow{
-  transform: translate(-80%, -80%);
-  transform-origin: 80% 80%;
-}
+
+.dashed-line path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: fillDash 2s linear forwards;
+} */

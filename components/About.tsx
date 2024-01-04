@@ -1,9 +1,21 @@
 "use client";
 import Image from "next/image";
 import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef,  useState, useEffect} from "react";
 
-export default function Wait() {
+export default function About() {
+  const [seconds, setSeconds] = useState(30);
+  const isActive = false;
+  useEffect(() => {
+    if (isActive) {
+      const interval = setInterval(() => {
+        setSeconds(previous => previous + 1);
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }
+  }, [isActive]);
+  
     let ref1 = useRef(null);
     let ref2 = useRef(null);
 
@@ -16,11 +28,11 @@ export default function Wait() {
     target: ref2,
     offset: ["start end", "end start"]
   });
-  let y = useTransform(scrollYProgress1, [0, 1], ["0%", "70%"]);
-    let rotate = useTransform(scrollYProgress2, [0, 1], ["45deg", "260deg"]);
-    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], ["200deg", "220deg"]);
-    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], ["210deg", "360deg"]);
-    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], ["100deg", "140deg"]);
+    let y = useTransform(scrollYProgress1, [0, 1], ["0%", "70%"]);
+    let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds}deg`, "160deg"]);
+    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], ["80deg", "120deg"]);
+    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], ["280deg", "380deg"]);
+    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], ["80deg", "120deg"]);
 
     const transform = useMotionTemplate`translate(-80%, -80%) rotate(${rotate})`;
     const transform1 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow1})`;
@@ -28,11 +40,11 @@ export default function Wait() {
     const transform3 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow3})`;
 
   return (
-    <div className="overflow-hidden mt-[2vh] relative z-10 bg-black">
-      <div className="relative top-0 left-0 w-screen h-[60vh] z-10 bg-black"></div>
+    <div className="pl-[10vw] overflow-hidden mt-[2vh] relative z-10 bg-black">
+      <div className="relative w-screen h-[60vh] z-10 bg-black max-md:h-[10vh]"></div>
       <motion.div className="relative z-20 bg-black" ref={ref1} style={{ y }}>
-        <div className="relative ml-[10vw]">
-          <div className="absolute top-0 left-[-1rem] text-xs text-secondary">
+        <div className="relative ">
+          <div className="absolute top-0 left-[-4vw] text-xs text-secondary">
             Prtfl
             <br />
             Ldd
@@ -55,7 +67,7 @@ export default function Wait() {
             it's a mindset.
           </div>
         </div>
-        <div className="mt-[8vh] ml-[10vw] flex">
+        <div className="mt-[8vh] flex">
           <p className="text-main max-w-[50%] mt-[18vh] mr-[10vw]">
             <span className="text-secondary">
               //DESCRIPTION
@@ -161,13 +173,22 @@ export default function Wait() {
             </div>
 
             <Image
-              className="max-w-[40vw] max-h-[44vh]"
-              src="\images\group15.svg"
+              className="max-w-[50vw] max-h-[50vh]"
+              src="\images\group 16.svg"
               alt="about me"
-              width={373}
+              width={494}
               height={469}
             />
           </div>
+        </div>
+        <div className="mt-[4vh] ml-[-4vw] text-xs text-secondary">
+            INIT
+            <br />
+            DATA TYPE
+            <br />
+            +10
+            <br />
+            ----SP DIR[ + ]
         </div>
       </motion.div>
     </div>

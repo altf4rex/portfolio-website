@@ -10,7 +10,7 @@ export default function Main() {
     })
     let y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"])
     return (
-        <motion.section className="overflow-hidden relative z-0 ml-[2rem]" ref={ref} style={{y}}>
+        <motion.section className="pl-[2vw] overflow-hidden relative z-0" ref={ref} style={{y}}>
             <h1 className="header">DN</h1>
         </motion.section>
     )
