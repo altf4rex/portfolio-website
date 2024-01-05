@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Header from "@/components/Header";
 import LeftMenu from "@/components/LeftMenu";
 import Main from "@/components/Main";
+import Projects from "@/components/Projects";
 import Wait from "@/components/Wait";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Main />
       <About />
       <Wait />
+      <Projects />
     </main>
   )
 }

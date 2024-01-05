@@ -1,7 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 
 export default function Wait() {
   const variants = {
@@ -15,11 +14,6 @@ export default function Wait() {
         duration: 0.8,
       },
     }),
-  };
-
-  const iconVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
   };
 
   return (

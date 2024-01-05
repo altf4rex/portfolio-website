@@ -53,7 +53,6 @@ export default function About() {
             <br />
             100%
           </div>
-          {/* <h2 className="header ">ABOUT<br/>ME</h2> */}
           <Image
             className="w-[90%] h-[100%]"
             src="\images\about me.svg"
