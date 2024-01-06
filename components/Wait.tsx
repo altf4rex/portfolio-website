@@ -26,7 +26,12 @@ export default function Wait() {
         height={222}
       />
       <div className="flex justify-around mx-[10vw] items-center text-base leading-[1.6rem] text-normal uppercase text-white">
-        <div>
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{ once: true, amount: 0.8  }}
+          transition={{ duration: 0.8, delay: 0.2}}
+        >
           <p>+9</p>
           <p className="mt-20">MAINT&gt;</p>
           <div className="relative">
@@ -51,13 +56,14 @@ export default function Wait() {
             act f-pln&gt;
           </p>
           <p className="mt-16">target</p>
-        </div>
+        </motion.div>
         <motion.div
           className="flex flex-col items-center"
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
         >
-          <motion.div variants={variants} custom={1}>
+          <motion.div variants={variants} custom={1.2}>
             standby progress
           </motion.div>
           <motion.svg
@@ -119,7 +125,11 @@ export default function Wait() {
             />
           </svg>
         </motion.div>
-        <div>
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2}}>
           <p>
             from
             <br />
@@ -140,7 +150,7 @@ export default function Wait() {
             -<br />
             -<br />
           </p>
-        </div>
+        </motion.div>
       </div>
       <Image
         className="absolute top-0 right-0"

@@ -20,4 +20,24 @@ export const projects = [
         alt: "Portfolio website", 
         link: ""
     }
+
 ]
+export const links = [
+    {
+        id: 1,
+        name: "github", 
+        link: "https://github.com/altf4rex"
+    },
+    {
+        id: 2,
+        name: "linkedin", 
+        link: "https://www.linkedin.com/in/daniil-n-a88140280/"
+    },
+    {
+        id: 3,
+        name: "telegram", 
+        link: ""
+    }
+];
+
+export const arr  = ["lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect", "lets connect"];

@@ -2,17 +2,37 @@
 import { projects } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform} from "framer-motion"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 
 export default function Projects() {
     
-        let ref = useRef(null);
-        let { scrollYProgress } = useScroll({
-            target: ref,
-            offset: ["0%", "100%"]
-        })
-        let x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+
+    if (scrollElement) {
+      const handleScroll = (e: WheelEvent) => {
+        // Проверяем, достигли ли мы начала или конца блока прокрутки
+        const atBottom = scrollElement.scrollLeft + scrollElement.offsetWidth >= scrollElement.scrollWidth;
+        const atTop = scrollElement.scrollLeft === 0;
+
+        // Если мы находимся в верхней части и прокручиваем вверх, или в нижней части и прокручиваем вниз, предотвращаем прокрутку
+        if ((atTop && e.deltaY < 0) || (atBottom && e.deltaY > 0)) {
+          e.preventDefault();
+        } else {
+          // В противном случае прокручиваем блок
+          scrollElement.scrollLeft += e.deltaY;
+        }
+      };
+
+      scrollElement.addEventListener('wheel', handleScroll);
+
+      return () => {
+        scrollElement.removeEventListener('wheel', handleScroll);
+      };
+    }
+  }, []);
 
   return (
     <section className="pl-[4vw] pt-[10vh] overflow-hidden bg-black">
@@ -59,12 +79,12 @@ export default function Projects() {
           <path d="M0 1L2766 1.00024" stroke="#B2B2B1" stroke-dasharray="4 4" />
         </svg>
       </div>
-      <motion.div className="scroll mt-[10vh] flex overflow-x-auto" style={{x}} ref={ref}>
+      <div className="scroll mt-[10vh] flex overflow-x-auto" ref={scrollRef}>
         {
             projects.map((p) => 
             <div className="flex flex-col">
                 <div className="flex items-end mr-[4vw]">
-                    <Link href={p.link} className="hover:brightness-75">
+                    <Link href={p.link} target="_blank" rel="noopener noreferrer" className="hover:brightness-75">
                     <Image 
                         className="mr-[2vw] object-cover"
                         src={p.img}
@@ -73,7 +93,7 @@ export default function Projects() {
                         height={500}
                     />
                     </Link>
-                    <Link href={p.link} className="hover:brightness-75">
+                    <Link href={p.link} target="_blank" rel="noopener noreferrer" className="hover:brightness-75">
                     <Image 
                         className="object-cover"
                         src={p.img}
@@ -87,7 +107,7 @@ export default function Projects() {
             </div>
             )
         }
-      </motion.div>
+      </div>
     </section>
   );
 }
