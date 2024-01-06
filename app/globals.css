@@ -64,10 +64,11 @@ body, html {
 }
 
 html {
-  background-color: #080909;
     font-size: 1.1vw;
     font-weight: 400;
     line-height: 1.2;
+    background-color: #080909;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -156,3 +157,54 @@ h2{
   stroke-dashoffset: 100;
   animation: fillDash 2s linear forwards;
 } */
+
+
+.track-left {
+  display: flex;
+  justify-content: space-between;
+  animation: marquee 100s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.track-right{
+  display: flex;
+  justify-content: space-between;
+  animation: marquee-right 100s linear infinite;
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+} 
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  animation: rotate 600s linear infinite;
+}
+
+
+@keyframes rotate-small {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.circle-small {
+  animation: rotate-small 300s linear infinite;
+}
