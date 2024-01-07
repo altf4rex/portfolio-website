@@ -8,31 +8,7 @@ export default function Projects() {
     
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const scrollElement = scrollRef.current;
 
-    if (scrollElement) {
-      const handleScroll = (e: WheelEvent) => {
-        // Проверяем, достигли ли мы начала или конца блока прокрутки
-        const atBottom = scrollElement.scrollLeft + scrollElement.offsetWidth >= scrollElement.scrollWidth;
-        const atTop = scrollElement.scrollLeft === 0;
-
-        // Если мы находимся в верхней части и прокручиваем вверх, или в нижней части и прокручиваем вниз, предотвращаем прокрутку
-        if ((atTop && e.deltaY < 0) || (atBottom && e.deltaY > 0)) {
-          e.preventDefault();
-        } else {
-          // В противном случае прокручиваем блок
-          scrollElement.scrollLeft += e.deltaY;
-        }
-      };
-
-      scrollElement.addEventListener('wheel', handleScroll);
-
-      return () => {
-        scrollElement.removeEventListener('wheel', handleScroll);
-      };
-    }
-  }, []);
 
   return (
     <section className="pl-[4vw] pt-[10vh] overflow-hidden bg-black">
@@ -86,7 +62,7 @@ export default function Projects() {
                 <div className="flex items-end mr-[4vw]">
                     <Link href={p.link} target="_blank" rel="noopener noreferrer" className="hover:brightness-75">
                     <Image 
-                        className="mr-[2vw] object-cover"
+                        className="mr-[2vw] object-cover max-w-[30rem] max-h-[30rem]"
                         src={p.img}
                         alt={p.alt}
                         width={500}
@@ -95,7 +71,7 @@ export default function Projects() {
                     </Link>
                     <Link href={p.link} target="_blank" rel="noopener noreferrer" className="hover:brightness-75">
                     <Image 
-                        className="object-cover"
+                        className="object-cover max-w-[24rem] max-h-[24rem]"
                         src={p.img}
                         alt={p.alt}
                         width={400}

@@ -79,9 +79,6 @@ body {
   margin-right: auto; */
 }
 
-img, video {
-  max-width: 100vh;
-}
 
 h1{
   font-size: 45rem;
@@ -98,8 +95,8 @@ h2{
 }
 
 .text-main {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
     color: #B2B2B1;
 }
 

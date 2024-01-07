@@ -1,6 +1,8 @@
+"use client"
+
 import Link from "next/link";
 import { arr, links } from "@/constants";
-
+import { motion } from "framer-motion";
 export default function Contacts() {
     const doubleArr = [...arr, ...arr];
   return (
@@ -9,7 +11,7 @@ export default function Contacts() {
       className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black"
     >
       <svg
-        className="circle absolute -right-[45%]"
+        className="circle absolute -right-[57%]"
         width="2178"
         height="2178"
         viewBox="0 0 2178 2178"
@@ -51,10 +53,21 @@ export default function Contacts() {
         ))}
       </div>
       <div className="px-3 flex justify-between items-center">
-        <h3 className="relative z-[60] text-[16rem] font-extralight -tracking-[0.14em] text-primary">
+        <motion.div 
+        className="relative z-[60] text-[16rem] font-extralight -tracking-[0.14em] text-primary"
+        initial={{opacity: 0, y: 100}}
+        whileInView={{opacity: 1, y: 0}}
+        viewport={{ once: true, amount: 0.7}}
+        transition={{ duration: 0.8}}
+        >
           CONTACT
-        </h3>
-        <div className="text-sm text-secondary pr-10">
+        </motion.div>
+        <motion.div className="text-sm text-secondary pr-10"
+        initial={{opacity: 0, x: 50}}
+        whileInView={{opacity: 1, x: 0}}
+        viewport={{ once: true, amount: 0.8}}
+        transition={{ease: "easeOut", duration: 0.8}}
+        >
           <p>//CHECKING...</p>
           <p className="text-primary">I am ready to talk in anytime.</p>
           <br />
@@ -65,18 +78,29 @@ export default function Contacts() {
             -.-- --- ..-
           </p>
           <span className="">&gt;</span>_
-        </div>
+        </motion.div>
       </div>
       <div className="flex justify-between px-6">
         <div className="flex">
-          <div className="flex items-center w-fit p-2 mr-4 border border-primary">
+          <motion.div 
+          className="flex items-center w-fit p-2 mr-4 border border-primary"
+          initial={{opacity: 0, y: 100}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{ once: true, amount: 0.2}}
+          transition={{ease: "easeOut", delay: 0.1, duration: 0.5}}
+          >
             <div className="w-1 h-1 mr-3 bg-[#FAEE50]"></div>
             <p className="text-sm text-primary">daniil.nat00@gmail.com</p>
-          </div>
-          <div className="flex items-center w-fit p-2 mr-4 border border-primary">
+          </motion.div>
+          <motion.div 
+          className="flex items-center w-fit p-2 mr-4 border border-primary"
+          initial={{opacity: 0, y: 100}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{ once: true, amount: 0.2}}
+          transition={{ease: "easeOut", delay: 0.3, duration: 0.5}}>
             <div className="w-1 h-1 mr-3 bg-[#FAEE50]"></div>
-            <p className="text-sm text-primary">daniil.nat00@gmail.com</p>
-          </div>
+            <p className="text-sm text-primary">+7 929 012 76 05</p>
+          </motion.div>
         </div>
         <div className="flex relative z-[60]">
           {links.map((l) => (

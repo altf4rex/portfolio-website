@@ -10,7 +10,7 @@ export default function Wait() {
     visible: (i: number) => ({
       opacity: 1,
       transition: {
-        delay: i * 0.4,
+        delay: i * 0.3,
         duration: 0.8,
       },
     }),
@@ -19,7 +19,7 @@ export default function Wait() {
   return (
     <div className="relative z-30 py-[20vh] pb-[10vh] overflow-hidden bg-black">
       <Image
-        className="absolute letft-0 bottom-0"
+        className="absolute letft-0 bottom-0 max-w-[24rem] max-h-[12rem]"
         src="\images\52 1.svg"
         alt=""
         width={444}
@@ -40,9 +40,9 @@ export default function Wait() {
             -<br />
             <motion.img
                 animate={{
-                    opacity: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+                    opacity: [0, 1, 0, 1, 0, 1, 0, 1]
                   }}
-                  transition={{ duration: 5, ease: "linear"}}
+                  transition={{ duration: 4, ease: "linear"}}
               className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 "
               src="\images\icon-attention.svg"
               alt="attention"
@@ -153,7 +153,7 @@ export default function Wait() {
         </motion.div>
       </div>
       <Image
-        className="absolute top-0 right-0"
+        className="absolute top-0 right-0 max-w-[30rem] max-h-[21rem]"
         src="\images\56 1.svg"
         alt=""
         width={600}

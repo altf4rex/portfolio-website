@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionTemplate, useScroll, useTransform, useSpring, MotionValue} from "framer-motion";
 import { useRef,  useState, useEffect} from "react";
 
 export default function About() {
@@ -15,20 +15,14 @@ export default function About() {
       return () => clearInterval(interval);
     }
   }, [isActive]);
-  
-    let ref1 = useRef(null);
-    let ref2 = useRef(null);
 
-  let { scrollYProgress: scrollYProgress1 } = useScroll({
-    target: ref1,
-    offset: ["20%", "100%"],
-  });
+    let ref2 = useRef(null);
 
   let { scrollYProgress: scrollYProgress2 } = useScroll({
     target: ref2,
     offset: ["start end", "end start"]
   });
-    let y = useTransform(scrollYProgress1, [0, 1], ["0%", "70%"]);
+
     let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds}deg`, "160deg"]);
     let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], ["80deg", "120deg"]);
     let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], ["280deg", "380deg"]);
@@ -39,10 +33,11 @@ export default function About() {
     const transform2 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow2})`;
     const transform3 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow3})`;
 
-  return (
-    <div className="pl-[10vw] overflow-hidden mt-[2vh] relative z-10 bg-black">
-      <div className="relative w-screen h-[60vh] z-10 bg-black max-md:h-[10vh]"></div>
-      <motion.div className="relative z-20 bg-black" ref={ref1} style={{ y }}>
+    return (
+      <div 
+        className="pl-36 pt-20 overflow-hidden relative z-10 bg-black"
+      >
+      <div className="relative z-20 bg-black">
         <div className="relative ">
           <div className="absolute top-0 left-[-4vw] text-xs text-secondary">
             Prtfl
@@ -66,8 +61,14 @@ export default function About() {
             it's a mindset.
           </div>
         </div>
-        <div className="mt-[8vh] flex">
-          <p className="text-main max-w-[50%] mt-[18vh] mr-[10vw]">
+        <div 
+        className="mt-8 flex max-md:flex-wrap">
+          <motion.div 
+          initial={{opacity: 0, x: -50}}
+          whileInView={{opacity: 1, x: 0}}
+          viewport={{ once: true, amount: 0.7}}
+          transition={{ duration: 0.8}}
+          className="text-main max-w-[50%] mt-40 mr-20">
             <span className="text-secondary">
               //DESCRIPTION
               <br />
@@ -87,8 +88,13 @@ export default function About() {
               ISO
               <br />
             </span>
-          </p>
-          <div className="relative" ref={ref2}>
+          </motion.div>
+          <motion.div 
+          className="relative" ref={ref2}
+          initial={{opacity: 0, scale: 1.2}}
+          whileInView={{opacity: 1, scale: 1}}
+          viewport={{ once: true, amount: 0.7}}
+          transition={{ duration: 0.8}}>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-block">
               <motion.svg
                 style={{ transform }}
@@ -170,15 +176,14 @@ export default function About() {
                 />
               </svg>
             </div>
-
             <Image
-              className="max-w-[50vw] max-h-[50vh]"
+              className="max-w-[26rem] max-h-[24rem]"
               src="\images\group 16.svg"
               alt="about me"
               width={494}
               height={469}
             />
-          </div>
+          </motion.div>
         </div>
         <div className="mt-[4vh] ml-[-4vw] text-xs text-secondary">
             INIT
@@ -189,7 +194,7 @@ export default function About() {
             <br />
             ----SP DIR[ + ]
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
