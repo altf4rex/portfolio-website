@@ -20,12 +20,22 @@ export default function Contacts() {
     }),
   };
   return (
-    <section
+    <motion.section
+    initial={{opacity: 0}}
+    whileInView={{opacity: 1}}
+    viewport={{ once: true, amount: 0.5}}
+
       id="contacts"
       className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black"
     >
+      <motion.div
+      initial={{opacity: 0, x: 200}}
+      whileInView={{opacity: 1, x: 0}}
+      viewport={{ once: true}}
+      transition={{ duration: 1.4}}
+      className="absolute -right-[58vw]">
       <svg
-        className="circle absolute -right-[57%]"
+        className="circle"
         width="2178"
         height="2178"
         viewBox="0 0 2178 2178"
@@ -40,8 +50,15 @@ export default function Contacts() {
           stroke-dasharray="10 10"
         />
       </svg>
+      </motion.div>
+      <motion.div
+      initial={{opacity: 0, x: 200}}
+      whileInView={{opacity: 1, x: 0}}
+      viewport={{ once: true}}
+      transition={{ duration: 1.4}}
+      className="absolute -right-[26vw]">
       <svg
-        className="circle-small absolute -right-[20%]"
+        className="circle-small "
         width="1028"
         height="1028"
         viewBox="0 0 1028 1028"
@@ -56,6 +73,7 @@ export default function Contacts() {
           stroke-dasharray="20 20"
         />
       </svg>
+      </motion.div>
       <div className="track-left absolute top-0 flex z-[60]">
       {doubleArr.map((a, index) => (
           <p
@@ -176,6 +194,6 @@ export default function Contacts() {
           </p>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -34,13 +34,40 @@ export default function Projects() {
     }
   }, []);
 
+
+  // useEffect(() => {
+  //   const el = scrollRef.current;
+  //   if (el) {
+  //     const onWheel = (e: WheelEvent) => {
+  //       let modifier = 1;
+  //       if (e.deltaMode === e.DOM_DELTA_LINE) {
+  //         modifier = parseInt(getComputedStyle(el).lineHeight);
+  //       } else if (e.deltaMode === e.DOM_DELTA_PAGE) {
+  //         modifier = el.clientHeight;
+  //       }
+  //       if (e.deltaY !== 0) {
+  //         // Добавляем проверку, что мы находимся в нижней части блока
+  //         if (el.scrollTop + el.clientHeight >= el.scrollHeight) {
+  //           if ((e.deltaY < 0 && el.scrollLeft <= 0) || 
+  //               (e.deltaY > 0 && el.scrollLeft + el.clientWidth >= el.scrollWidth)) {
+  //             return;
+  //           }
+  //           el.scrollLeft += modifier * e.deltaY;
+  //           e.preventDefault();
+  //         }
+  //       }
+  //     };
+  //     el.addEventListener("wheel", onWheel);
+  //     return () => el.removeEventListener("wheel", onWheel);
+  //   }
+  // }, []);
   return (
-    <section className="pl-[4vw] pt-[10vh] overflow-hidden bg-black">
+    <section className="pl-20 pt-36 overflow-hidden bg-black">
       <h2 className="header">projects</h2>
-      <div className="flex flex-col overflow-hidden" ref={scrollRef}>
+      <div className="flex flex-col overflow-hidden pr-40" ref={scrollRef}>
       <div className="flex pl-[2vw]">
         <svg
-        className="mt-14"
+        className="mt-14 min-w-[20rem]"
           xmlns="http://www.w3.org/2000/svg"
           width="471"
           height="2"
@@ -50,7 +77,7 @@ export default function Projects() {
           <path d="M0 1L471 0.999959" stroke="#B2B2B1" stroke-dasharray="4 4" />
         </svg>
         <svg
-         className="mt-[4.5rem]"
+         className="mt-[4.5rem] min-w-[15rem]"
           xmlns="http://www.w3.org/2000/svg"
           width="321"
           height="2"
@@ -60,7 +87,7 @@ export default function Projects() {
           <path d="M0 1L321 1.00003" stroke="#B2B2B1" stroke-dasharray="4 4" />
         </svg>
         <svg
-            className="mt-[5.5rem] mr-2"
+            className="mt-[5.5rem] mr-2 min-w-[20rem]"
           xmlns="http://www.w3.org/2000/svg"
           width="490"
           height="2"
@@ -70,11 +97,11 @@ export default function Projects() {
           <path d="M0 1L490 0.999957" stroke="#B2B2B1" stroke-dasharray="4 4" />
         </svg>
         {
-          projects.map((a, i) => 
+          [...Array(projects.length + 1)].map((a, i) => 
           <>
           <svg
           key={i}
-          className="mt-[5.5rem]"
+          className="mt-[5.5rem] min-w-[20rem]"
            xmlns="http://www.w3.org/2000/svg"
            width="514"
            height="2"
@@ -87,7 +114,7 @@ export default function Projects() {
           )
         }
       </div>
-      <div className="scroll flex mt-20 ">
+      <div className="scroll flex mt-20">
         {
             projects.map((p) => 
             <div className="flex flex-col">
@@ -115,8 +142,10 @@ export default function Projects() {
             </div>
             )
         }
-      </div>    
+      </div> 
       </div>
+
+
     </section>
   );
 }

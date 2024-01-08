@@ -5,15 +5,15 @@ import { useRef,  useState, useEffect} from "react";
 
 export default function About() {
   const [seconds1, setSeconds1] = useState(10);
-  const [seconds2, setSeconds2] = useState(200);
-  const [seconds3, setSeconds3] = useState(300);
+  const [seconds2, setSeconds2] = useState(10);
+  const [seconds3, setSeconds3] = useState(200);
   const [seconds4, setSeconds4] = useState(200);
 
   const isActive = true;
   useEffect(() => {
     if (isActive) {
       const interval = setInterval(() => {
-        setSeconds1(previous => previous  + 12 );
+        setSeconds1(previous => previous  + 8 );
         setSeconds2(previous => previous + 4);
         setSeconds3(previous => previous + 1);
         setSeconds4(previous => previous + 10);
@@ -32,10 +32,10 @@ export default function About() {
     offset: ["start end", "end start"]
   });
 
-    let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, `${seconds1 + 360}deg`]);
-    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, `${seconds2 + 360}deg`]);
-    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, `${seconds3 + 360}deg`]);
-    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, `${seconds4 + 360}deg`]);
+    let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, "360deg"]);
+    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, "180deg"]);
+    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, "400deg"]);
+    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, "360deg"]);
 
     const transform = useMotionTemplate`translate(-80%, -80%) rotate(${rotate})`;
     const transform1 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow1})`;
