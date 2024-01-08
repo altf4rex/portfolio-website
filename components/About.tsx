@@ -1,32 +1,41 @@
 "use client";
 import Image from "next/image";
-import { motion, useMotionTemplate, useScroll, useTransform, useSpring, MotionValue} from "framer-motion";
+import { motion, useMotionTemplate, useScroll, useTransform} from "framer-motion";
 import { useRef,  useState, useEffect} from "react";
 
 export default function About() {
-  const [seconds, setSeconds] = useState(30);
-  const isActive = false;
+  const [seconds1, setSeconds1] = useState(10);
+  const [seconds2, setSeconds2] = useState(200);
+  const [seconds3, setSeconds3] = useState(300);
+  const [seconds4, setSeconds4] = useState(200);
+
+  const isActive = true;
   useEffect(() => {
     if (isActive) {
       const interval = setInterval(() => {
-        setSeconds(previous => previous + 1);
-      }, 1000);
+        setSeconds1(previous => previous  + 12 );
+        setSeconds2(previous => previous + 4);
+        setSeconds3(previous => previous + 1);
+        setSeconds4(previous => previous + 10);
+      }, 800);
+
   
       return () => clearInterval(interval);
     }
   }, [isActive]);
 
-    let ref2 = useRef(null);
+  
+  let ref2 = useRef(null);
 
   let { scrollYProgress: scrollYProgress2 } = useScroll({
     target: ref2,
     offset: ["start end", "end start"]
   });
 
-    let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds}deg`, "160deg"]);
-    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], ["80deg", "120deg"]);
-    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], ["280deg", "380deg"]);
-    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], ["80deg", "120deg"]);
+    let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, `${seconds1 + 360}deg`]);
+    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, `${seconds2 + 360}deg`]);
+    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, `${seconds3 + 360}deg`]);
+    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, `${seconds4 + 360}deg`]);
 
     const transform = useMotionTemplate`translate(-80%, -80%) rotate(${rotate})`;
     const transform1 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow1})`;
@@ -98,7 +107,7 @@ export default function About() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-block">
               <motion.svg
                 style={{ transform }}
-                className="clock-arrow"
+                className="clock-arrow max-w-[5.5rem] max-h-[15rem]"
                 width="88"
                 height="239"
                 viewBox="0 0 88 239"
@@ -115,7 +124,7 @@ export default function About() {
               </motion.svg>
               <motion.svg
                 style={{ transform: transform1 }}
-                className="clock-arrow"
+                className="clock-arrow max-w-[16rem] max-h-[0.065rem] duration-500"
                 width="259"
                 height="1"
                 viewBox="0 0 259 1"
@@ -126,7 +135,7 @@ export default function About() {
               </motion.svg>
               <motion.svg
                 style={{ transform: transform2 }}
-                className="clock-arrow"
+                className="clock-arrow max-w-[11.2rem] max-h-[5.4rem] duration-500"
                 width="180"
                 height="85"
                 viewBox="0 0 180 85"
@@ -143,7 +152,7 @@ export default function About() {
               </motion.svg>
               <motion.svg
                 style={{ transform: transform3 }}
-                className="clock-arrow"
+                className="clock-arrow max-w-[11.4rem] max-h-[11.4rem] duration-200"
                 width="183"
                 height="183"
                 viewBox="0 0 183 183"
@@ -159,7 +168,7 @@ export default function About() {
                 />
               </motion.svg>
               <svg
-                className="clock-center"
+                className="clock-center max-w-[1.9rem] max-h-[1.9rem] duration-500"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"

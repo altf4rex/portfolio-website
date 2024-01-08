@@ -39,11 +39,10 @@ export default function Wait() {
             -<br />
             -<br />
             <motion.img
-                animate={{
-                    opacity: [0, 1, 0, 1, 0, 1, 0, 1]
-                  }}
-                  transition={{ duration: 4, ease: "linear"}}
-              className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 "
+              whileInView={{opacity: [0, 1, 0, 1, 0, 1, 0, 1]}}
+              viewport={{ once: true}}
+              transition={{ duration: 4, ease: "linear"}}
+              className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-6 h-6"
               src="\images\icon-attention.svg"
               alt="attention"
               width={29}

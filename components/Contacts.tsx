@@ -5,6 +5,20 @@ import { arr, links } from "@/constants";
 import { motion } from "framer-motion";
 export default function Contacts() {
     const doubleArr = [...arr, ...arr];
+    const variants = {
+    hidden: {
+      opacity: 0,
+      x: 50,
+    },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.8,
+      },
+    }),
+  };
   return (
     <section
       id="contacts"
@@ -102,8 +116,17 @@ export default function Contacts() {
             <p className="text-sm text-primary">+7 929 012 76 05</p>
           </motion.div>
         </div>
-        <div className="flex relative z-[60]">
-          {links.map((l) => (
+        <motion.div 
+        className="flex relative z-[60]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true}}
+        >
+          {links.map((l, i) => (
+            <motion.div
+              variants={variants}
+              custom={i + 1}
+            >
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -138,9 +161,10 @@ export default function Contacts() {
                   </clipPath>
                 </defs>
               </svg>
-            </Link>
+            </Link>               
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <div className="track-right absolute bottom-0 flex z-[60]">
         {doubleArr.map((a, index) => (
