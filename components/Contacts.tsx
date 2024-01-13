@@ -84,9 +84,9 @@ export default function Contacts() {
           </p>
         ))}
       </div>
-      <div className="px-3 flex justify-between items-center">
+      <div className="px-3 flex justify-between items-center relative z-[60]">
         <motion.div 
-        className="relative z-[60] text-[16rem] font-extralight -tracking-[0.14em] text-primary"
+        className="text-[16rem] font-extralight -tracking-[0.14em] text-primary"
         initial={{opacity: 0, y: 100}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{ once: true, amount: 0.7}}
@@ -112,7 +112,7 @@ export default function Contacts() {
           <span className="">&gt;</span>_
         </motion.div>
       </div>
-      <div className="flex justify-between px-6">
+      <div className="flex justify-between px-6 relative z-[60]">
         <div className="flex">
           <motion.div 
           className="flex items-center w-fit p-2 mr-4 border border-primary"

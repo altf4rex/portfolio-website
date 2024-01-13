@@ -53,6 +53,18 @@
   border-radius: 18px;
 }
 
+::selection {
+  background: #434243; 
+  color: #080909;
+}
+::-moz-selection {
+  background: #434243; 
+  color: #080909;
+}
+::-webkit-selection {
+  background: #434243; 
+  color: #080909;
+}
 
 body, html {
   height: 100%;
