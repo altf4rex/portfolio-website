@@ -21,12 +21,11 @@ export default function Contacts() {
   };
   return (
     <motion.section
-    initial={{opacity: 0}}
+      initial={{opacity: 0}}
     whileInView={{opacity: 1}}
     viewport={{ once: true, amount: 0.5}}
-
-      id="contacts"
-      className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black"
+    id="contacts"
+    className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black"
     >
       <motion.div
       initial={{opacity: 0, x: 200}}

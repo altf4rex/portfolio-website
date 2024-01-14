@@ -17,9 +17,9 @@ export default function Wait() {
   };
 
   return (
-    <div className="relative z-30 py-[20vh] pb-[10vh] overflow-hidden bg-black">
+    <div className="relative z-30 py-48 pb-24 overflow-hidden bg-black max-md:py-40 max-md:pb-12">
       <Image
-        className="absolute letft-0 bottom-0 max-w-[24rem] max-h-[12rem]"
+        className="absolute letft-0 bottom-0 max-w-[24rem] max-h-[12rem] max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:hidden"
         src="\images\52 1.svg"
         alt=""
         width={444}
@@ -27,13 +27,14 @@ export default function Wait() {
       />
       <div className="flex justify-around mx-[10vw] items-center text-base leading-[1.6rem] text-normal uppercase text-white">
         <motion.div
+          className="max-md:mb-36"
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
           viewport={{ once: true, amount: 0.8  }}
           transition={{ duration: 0.8, delay: 0.2}}
         >
           <p>+9</p>
-          <p className="mt-20">MAINT&gt;</p>
+          <p className="mt-20 max-md:mt-4">MAINT&gt;</p>
           <div className="relative">
             -<br />
             -<br />
@@ -54,7 +55,7 @@ export default function Wait() {
             <br />
             act f-pln&gt;
           </p>
-          <p className="mt-16">target</p>
+          <p className="mt-16 max-md:mt-2">target</p>
         </motion.div>
         <motion.div
           className="flex flex-col items-center"
@@ -95,17 +96,18 @@ export default function Wait() {
           >
             <path d="M1 0L0.999996 99" stroke="#B2B2B1" strokeDasharray="4 4" />
           </motion.svg>
-          <motion.div variants={variants} custom={8}>
+          <motion.div variants={variants} custom={8} className="whitespace-nowrap">
             --- [ projects loaded ] ---
           </motion.div>
           
           <svg
+           className="mt-28 max-md:mt-20"
             xmlns="http://www.w3.org/2000/svg"
             width="132"
             height="50"
             viewBox="0 0 132 50"
             fill="none"
-            className="mt-28"
+           
           >
             <motion.path
                 variants={variants} custom={9}
@@ -125,6 +127,7 @@ export default function Wait() {
           </svg>
         </motion.div>
         <motion.div
+        className="max-md:mb-36"
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
           viewport={{ once: true, amount: 0.8 }}
@@ -144,7 +147,7 @@ export default function Wait() {
             <br />
             point
           </p>
-          <p className="mt-16">
+          <p className="mt-16 max-md:mt-2">
             -<br />
             -<br />
             -<br />
@@ -152,7 +155,7 @@ export default function Wait() {
         </motion.div>
       </div>
       <Image
-        className="absolute top-0 right-0 max-w-[30rem] max-h-[21rem]"
+        className="absolute top-2 right-0 max-w-[30rem] max-h-[21rem] max-md:left-1/2 max-md:-translate-x-[58%] max-md:-translate-y-[2%]"
         src="\images\56 1.svg"
         alt=""
         width={600}

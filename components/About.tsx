@@ -45,11 +45,11 @@ export default function About() {
 
     return (
       <div 
-        className="pl-36 pt-24 overflow-hidden relative z-10 bg-black"
+        className="pl-36 pt-24 overflow-hidden relative z-10 bg-black max-md:pl-0 max-md:pt-12"
       >
       <div className="relative z-20 bg-black">
         <div className="relative ">
-          <div className="absolute top-0 left-[-4vw] text-xs text-secondary">
+          <div className="absolute top-0 -left-10 text-xs text-secondary max-md:hidden">
             Prtfl
             <br />
             Ldd
@@ -59,26 +59,26 @@ export default function About() {
             100%
           </div>
           <Image
-            className="w-[90%] h-[100%]"
+            className="w-[90%] h-[100%] max-md:w-[100%] max-md:pl-2"
             src="\images\about me.svg"
             alt="about me"
             width={1542}
             height={304}
           />
-          <div className="absolute bottom-8 right-[9vw] text-right text-xs text-secondary">
+          <div className="absolute bottom-8 right-20 text-right text-xs text-secondary max-md:bottom-0 max-md:right-4">
             Front-end is not just a job,
             <br />
             it's a mindset.
           </div>
         </div>
         <div 
-        className="mt-8 flex max-md:flex-wrap  max-md:justify-end">
-          <motion.div 
+          className="mt-8 flex max-md:flex-wrap max-md:justify-center max-md:mt-2">
+          <motion.div
           initial={{opacity: 0, x: -50}}
           whileInView={{opacity: 1, x: 0}}
           viewport={{ once: true, amount: 0.7}}
           transition={{ duration: 0.8}}
-          className="text-main max-w-[50%] mt-40 mr-20 max-md:max-w-[90%]">
+          className="text-main max-w-[50%] mt-40 mr-20 max-md:max-w-[90%] max-md:mt-10 max-md:mr-2">
             <span className="text-secondary">
               //DESCRIPTION
               <br />
@@ -100,7 +100,7 @@ export default function About() {
             </span>
           </motion.div>
           <motion.div 
-          className="relative max-md:mr-20" ref={ref2}
+          className="relative max-md:mr-0 max-md:mt-20" ref={ref2}
           initial={{opacity: 0, scale: 1.2}}
           whileInView={{opacity: 1, scale: 1}}
           viewport={{ once: true, amount: 0.7}}
@@ -195,7 +195,7 @@ export default function About() {
             />
           </motion.div>
         </div>
-        <div className="mt-[4vh] ml-[-4vw] text-xs text-secondary">
+        <div className="mt-16 -ml-10 text-xs text-secondary max-md:ml-8 max-md:mt-0">
             INIT
             <br />
             DATA TYPE
