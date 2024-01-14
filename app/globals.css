@@ -55,15 +55,15 @@
 
 ::selection {
   background: #434243; 
-  color: #080909;
+  color: #B2B2B1;
 }
 ::-moz-selection {
   background: #434243; 
-  color: #080909;
+  color: #B2B2B1;
 }
 ::-webkit-selection {
   background: #434243; 
-  color: #080909;
+  color: #B2B2B1;
 }
 
 body, html {
@@ -76,12 +76,24 @@ body, html {
 }
 
 html {
-    font-size: 1.1vw;
+    font-size: 1vw;
     font-weight: 400;
     line-height: 1.2;
     background-color: #080909;
     scroll-behavior: smooth;
 }
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 1.4vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html  {
+    font-size: 3vw;
+  }
+}
+
 
 body {
   font-family: "CPMono";
@@ -216,4 +228,14 @@ h2{
 
 .circle-small {
   animation: rotate-small 300s linear infinite;
+}
+
+@keyframes blink {
+  30% {
+    opacity: 0;
+  }
+}
+
+.blinking {
+  animation: blink 1.5s infinite;
 }

@@ -4,47 +4,48 @@ import { motion, useMotionTemplate, useScroll, useTransform} from "framer-motion
 import { useRef,  useState, useEffect} from "react";
 
 export default function About() {
-  const [seconds1, setSeconds1] = useState(10);
-  const [seconds2, setSeconds2] = useState(10);
-  const [seconds3, setSeconds3] = useState(200);
-  const [seconds4, setSeconds4] = useState(200);
+  const [seconds1, setSeconds1] = useState(0);
+  const [seconds2, setSeconds2] = useState(0);
+  const [seconds3, setSeconds3] = useState(0);
+  const [seconds4, setSeconds4] = useState(0);
 
-  const isActive = true;
+  const ref2 = useRef(null);
+
   useEffect(() => {
-    if (isActive) {
-      const interval = setInterval(() => {
-        setSeconds1(previous => previous  + 8 );
-        setSeconds2(previous => previous + 4);
-        setSeconds3(previous => previous + 1);
-        setSeconds4(previous => previous + 10);
-      }, 800);
+    let animationFrameId: number;
 
-  
-      return () => clearInterval(interval);
-    }
-  }, [isActive]);
+    const updateValues = () => {
+      setSeconds1((prev) => (prev + 0.2));
+      setSeconds2((prev) => (prev + 0.1));
+      setSeconds3((prev) => (prev + 0.05));
+      setSeconds4((prev) => (prev + 0.15));
 
-  
-  let ref2 = useRef(null);
+      animationFrameId = requestAnimationFrame(updateValues);
+    };
 
-  let { scrollYProgress: scrollYProgress2 } = useScroll({
+    updateValues();
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+
+  const { scrollYProgress: scrollYProgress2 } = useScroll({
     target: ref2,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
-    let rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, "360deg"]);
-    let rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, "180deg"]);
-    let rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, "400deg"]);
-    let rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, "360deg"]);
+  const rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, "360deg"]);
+  const rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, "360deg"]);
+  const rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, "360deg"]);
+  const rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, "360deg"]);
 
-    const transform = useMotionTemplate`translate(-80%, -80%) rotate(${rotate})`;
-    const transform1 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow1})`;
-    const transform2 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow2})`;
-    const transform3 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow3})`;
+  const transform = useMotionTemplate`translate(-80%, -80%) rotate(${rotate})`;
+  const transform1 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow1})`;
+  const transform2 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow2})`;
+  const transform3 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow3})`;
 
     return (
       <div 
-        className="pl-36 pt-20 overflow-hidden relative z-10 bg-black"
+        className="pl-36 pt-24 overflow-hidden relative z-10 bg-black"
       >
       <div className="relative z-20 bg-black">
         <div className="relative ">
@@ -64,20 +65,20 @@ export default function About() {
             width={1542}
             height={304}
           />
-          <div className="absolute bottom-0 right-[9vw] text-right text-xs text-secondary">
+          <div className="absolute bottom-8 right-[9vw] text-right text-xs text-secondary">
             Front-end is not just a job,
             <br />
             it's a mindset.
           </div>
         </div>
         <div 
-        className="mt-8 flex max-md:flex-wrap">
+        className="mt-8 flex max-md:flex-wrap  max-md:justify-end">
           <motion.div 
           initial={{opacity: 0, x: -50}}
           whileInView={{opacity: 1, x: 0}}
           viewport={{ once: true, amount: 0.7}}
           transition={{ duration: 0.8}}
-          className="text-main max-w-[50%] mt-40 mr-20">
+          className="text-main max-w-[50%] mt-40 mr-20 max-md:max-w-[90%]">
             <span className="text-secondary">
               //DESCRIPTION
               <br />
@@ -99,7 +100,7 @@ export default function About() {
             </span>
           </motion.div>
           <motion.div 
-          className="relative" ref={ref2}
+          className="relative max-md:mr-20" ref={ref2}
           initial={{opacity: 0, scale: 1.2}}
           whileInView={{opacity: 1, scale: 1}}
           viewport={{ once: true, amount: 0.7}}
@@ -145,8 +146,8 @@ export default function About() {
                 <path
                   d="M4.44042 0.518641C2.92681 -0.155262 1.15348 0.525456 0.479579 2.03907C-0.194325 3.55268 0.486393 5.32601 2 5.99991L4.44042 0.518641ZM2 5.99991L177.401 84.0933L179.841 78.6121L4.44042 0.518641L2 5.99991Z"
                   fill="#FEFEFE"
-                  stroke="#080909" 
-                  stroke-width="2" 
+                  // stroke="#080909" 
+                  // stroke-width="2" 
                   stroke-linecap="square"
                 />
               </motion.svg>
