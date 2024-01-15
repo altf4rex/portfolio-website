@@ -121,12 +121,11 @@ h1{
 }
 
 h2{
-  font-size: 1rem;
+  font-size: 16rem;
   line-height: 0.72;
   font-weight: 200;
   letter-spacing: -2rem;
 }
-
 
 @media screen and (max-width: 768px) {
   h2{

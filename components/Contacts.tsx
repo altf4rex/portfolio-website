@@ -25,14 +25,15 @@ export default function Contacts() {
     whileInView={{opacity: 1}}
     viewport={{ once: true, amount: 0.5}}
     id="contacts"
-    className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black"
+    className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black "
     >
       <motion.div
+      className="absolute -right-[54rem]  max-2xl:-right-[80rem] max-xl:-right-[110rem]"
       initial={{opacity: 0, x: 200}}
       whileInView={{opacity: 1, x: 0}}
       viewport={{ once: true}}
       transition={{ duration: 1.4}}
-      className="absolute -right-[58vw]">
+      >
       <svg
         className="circle"
         width="2178"
@@ -55,7 +56,7 @@ export default function Contacts() {
       whileInView={{opacity: 1, x: 0}}
       viewport={{ once: true}}
       transition={{ duration: 1.4}}
-      className="absolute -right-[26vw]">
+      className="absolute -right-[28rem] max-2xl:-right-[45rem] max-xl:-right-[60rem]">
       <svg
         className="circle-small "
         width="1028"
@@ -83,9 +84,9 @@ export default function Contacts() {
           </p>
         ))}
       </div>
-      <div className="px-3 flex justify-between items-center relative z-[60]">
+      <div className="px-3 flex justify-between items-center relative z-[60] max-lg:flex-col max-lg:items-start max-md:px-0">
         <motion.div 
-        className="text-[16rem] font-extralight -tracking-[0.14em] text-primary"
+        className="text-[16rem] font-extralight -tracking-[0.14em] text-primary max-md:text-[9rem] max-md:mb-5"
         initial={{opacity: 0, y: 100}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{ once: true, amount: 0.7}}
@@ -93,7 +94,7 @@ export default function Contacts() {
         >
           CONTACT
         </motion.div>
-        <motion.div className="text-sm text-secondary pr-10"
+        <motion.div className="text-sm text-secondary pr-10 max-lg:pr-0 max-lg:pl-8 max-md:pl-4 max-md:mb-5"
         initial={{opacity: 0, x: 50}}
         whileInView={{opacity: 1, x: 0}}
         viewport={{ once: true, amount: 0.8}}
@@ -111,8 +112,8 @@ export default function Contacts() {
           <span className="">&gt;</span>_
         </motion.div>
       </div>
-      <div className="flex justify-between px-6 relative z-[60]">
-        <div className="flex">
+      <div className="flex justify-between px-6 relative z-[60] max-lg:pt-20 max-md:pt-10 max-md:justify-start max-md:flex-col">
+        <div className="flex max-md:flex-col">
           <motion.div 
           className="flex items-center w-fit p-2 mr-4 border border-primary"
           initial={{opacity: 0, y: 100}}
@@ -124,7 +125,7 @@ export default function Contacts() {
             <p className="text-sm text-primary">daniil.nat00@gmail.com</p>
           </motion.div>
           <motion.div 
-          className="flex items-center w-fit p-2 mr-4 border border-primary"
+          className="flex items-center w-fit p-2 mr-4 border border-primary max-md:mt-4"
           initial={{opacity: 0, y: 100}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{ once: true, amount: 0.2}}
@@ -134,13 +135,14 @@ export default function Contacts() {
           </motion.div>
         </div>
         <motion.div 
-        className="flex relative z-[60]"
+        className="flex relative z-[60] max-md:mt-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true}}
         >
           {links.map((l, i) => (
             <motion.div
+            className="mr-4 max-md:mr-6"
               variants={variants}
               custom={i + 1}
             >
@@ -148,7 +150,7 @@ export default function Contacts() {
               target="_blank"
               rel="noopener noreferrer"
               href={l.link}
-              className="group flex items-center w-fit p-2 mr-4 border border-primary hover:border-white "
+              className="group flex items-center w-fit p-2 border border-primary hover:border-white "
             >
               <p className="mr-2 text-sm text-primary group-hover:text-white">
                 {l.name}

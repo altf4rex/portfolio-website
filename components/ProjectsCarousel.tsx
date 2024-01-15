@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "@/constants";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -12,15 +12,30 @@ export default function HorizontalScrollCarousel() {
     target: targetRef,
   });
 
+  const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLgScreen(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
+  
 
   return (
-    <div ref={targetRef} className="relative h-[240vh] bg-black">
-      <div className="sticky top-0 flex h-screen  items-center overflow-hidden">
-        <motion.div style={{ x }} className="pr-56 max-[1820px]:pr-96">
-          <div className="flex absolute top-0">
+    <div ref={targetRef} className="relative h-[240vh] bg-black max-lg:h-screen">
+      <div className="sticky top-0 flex h-screen  items-center overflow-hidden max-lg:realtive max-lg:overflow-x-scroll max-md:h-[60vh]">
+        <motion.div style={isLgScreen ? { x } : {}} className="pr-56 max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2">
+          <div className="flex absolute top-0 z-10 max-lg:top-24 ">
             <svg
-              className="w-[25vw]"
+              className="w-[25vw] max-lg:w-[30vw] max-md:w-[60vw]"
               xmlns="http://www.w3.org/2000/svg"
               width="471"
               height="2"
@@ -34,7 +49,7 @@ export default function HorizontalScrollCarousel() {
               />
             </svg>
             <svg
-              className="mt-4 w-[18vw]"
+              className="mt-4 w-[18vw] max-lg:w-[22vw] max-md:w-[40vw]"
               xmlns="http://www.w3.org/2000/svg"
               width="321"
               height="2"
@@ -48,7 +63,7 @@ export default function HorizontalScrollCarousel() {
               />
             </svg>
             <svg
-              className="mt-6 mr-2 w-[26vw]"
+              className="mt-6 mr-2 w-[26vw] max-lg:w-[30vw] max-md:w-[59vw]"
               xmlns="http://www.w3.org/2000/svg"
               width="490"
               height="2"
@@ -64,7 +79,7 @@ export default function HorizontalScrollCarousel() {
             {[...Array(projects.length + 1)].map((a, i) => (
                 <svg
                   key={i}
-                  className="mt-6 w-[23vw] max-[1820px]:w-[28vw]"
+                  className="mt-6 w-[22vw] max-[1820px]:w-[24vw] max-lg:w-[38vw] max-md:w-[60vw]"
                   xmlns="http://www.w3.org/2000/svg"
                   width="514"
                   height="2"
@@ -85,7 +100,7 @@ export default function HorizontalScrollCarousel() {
               -<br/>
               /
             </p>
-              <svg width="268" height="614" viewBox="0 0 268 614" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-[2rem] max-w-[14vw] max-h-[32rem]">
+              <svg width="268" height="614" viewBox="0 0 268 614" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-[2rem] max-w-[14vw] max-h-[32rem] max-xl:hidden">
                 <path d="M257 589L253 593L249 589" stroke="#B2B2B1"/>
                 <path d="M257 509L253 513L249 509" stroke="#B2B2B1"/>
                 <path d="M257 599L253 603L249 599" stroke="#B2B2B1"/>
@@ -96,7 +111,7 @@ export default function HorizontalScrollCarousel() {
                 <path d="M267 1H6.17504e-05" stroke="#B2B2B1" stroke-dasharray="4 4"/>
               </svg>
           </div>
-          <div className="flex mt-36">
+          <div className="flex mt-36 relative z-50">
             {projects.map((p) => (
               <div className="flex flex-col">
                 <div className="flex items-end mr-16">
@@ -107,7 +122,7 @@ export default function HorizontalScrollCarousel() {
                     className="hover:brightness-75"
                   >
                     <Image
-                      className="mr-10 object-cover max-w-[30rem] max-h-[30rem]"
+                      className="mr-10 object-cover max-w-[30rem] max-h-[30rem] max-md:w-[20rem] max-md:h-[20rem]"
                       src={p.img}
                       alt={p.alt}
                       width={500}
@@ -121,7 +136,7 @@ export default function HorizontalScrollCarousel() {
                     className="hover:brightness-75"
                   >
                     <Image
-                      className="object-cover h-screen max-w-[21rem] max-h-[21rem]"
+                      className="object-cover h-screen max-w-[21rem] max-h-[21rem] max-md:w-[16rem] max-md:h-[16rem]"
                       src={p.imgMobile}
                       alt={p.alt}
                       width={400}
