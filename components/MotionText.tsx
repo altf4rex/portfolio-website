@@ -9,9 +9,9 @@ const TextAnimation = ({ text }: {text: string}) => {
     hover: (i: number) => ({
       opacity: [0, 1],
       transition: {
-        delay: i * 0.05,
-        type: "tween", // Добавьте эту строку
-        ease: "linear"  // Добавьте эту строку
+        delay: i * 0.03,
+        type: "tween", 
+        ease: "linear"  
       },
     }),
     visible: {
@@ -25,12 +25,13 @@ const TextAnimation = ({ text }: {text: string}) => {
   const variants = {
     initial: { opacity: 0, left: 0},
     hover: { 
-        opacity: [0, 1, 0, 1, 0], 
+        opacity: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0], 
         left: "100%",
         transition: {
-            duration: 0.7, // Используйте общее время анимации здесь
+            duration: 0.3, 
         }
-    }
+    },
+    visible: { opacity: 0, left: 0},
   }
 
   return (
@@ -39,19 +40,20 @@ const TextAnimation = ({ text }: {text: string}) => {
     initial="initial"
     whileHover="hover"
     animate="visible"
+    whileInView="hover"
     >
       {textArray.map((char, index) => (
         <motion.span
           key={index}
           variants={letterVariants}
-          custom={index}
+          custom={index + 1}
         >
           {char}
         </motion.span>
       ))}
                 <motion.span 
                 variants={variants}
-            className="absolute -bottom-1"
+                className="absolute -bottom-1"
           >
             _
           </motion.span>

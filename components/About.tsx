@@ -15,10 +15,10 @@ export default function About() {
     let animationFrameId: number;
 
     const updateValues = () => {
-      setSeconds1((prev) => (prev + 0.2));
-      setSeconds2((prev) => (prev + 0.1));
-      setSeconds3((prev) => (prev + 0.05));
-      setSeconds4((prev) => (prev + 0.15));
+      setSeconds1((prev) => (prev + 0.2) % 360);
+      setSeconds2((prev) => (prev + 0.1) % 360);
+      setSeconds3((prev) => (prev + 0.05)% 360);
+      setSeconds4((prev) => (prev + 0.15)% 360);
 
       animationFrameId = requestAnimationFrame(updateValues);
     };
@@ -33,10 +33,10 @@ export default function About() {
     offset: ["start end", "end start"],
   });
 
-  const rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, "360deg"]);
-  const rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, "360deg"]);
-  const rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, "360deg"]);
-  const rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, "360deg"]);
+  const rotate = useTransform(scrollYProgress2, [0, 1], [`${seconds1}deg`, `${seconds1 + 360}deg`]);
+  const rotateArrow1 = useTransform(scrollYProgress2, [0, 1], [`${seconds2}deg`, `${seconds2 + 360}deg`]);
+  const rotateArrow2 = useTransform(scrollYProgress2, [0, 1], [`${seconds3}deg`, `${seconds3 + 360}deg`]);
+  const rotateArrow3 = useTransform(scrollYProgress2, [0, 1], [`${seconds4}deg`, `${seconds4 + 360}deg`]);
 
   const transform = useMotionTemplate`translate(-80%, -80%) rotate(${rotate})`;
   const transform1 = useMotionTemplate`translate(-80%, -80%) rotate(${rotateArrow1})`;
@@ -125,7 +125,7 @@ export default function About() {
               </motion.svg>
               <motion.svg
                 style={{ transform: transform1 }}
-                className="clock-arrow max-w-[16rem] max-h-[0.065rem] duration-500"
+                className="clock-arrow max-w-[16rem] max-h-[0.065rem]"
                 width="259"
                 height="1"
                 viewBox="0 0 259 1"
@@ -136,7 +136,7 @@ export default function About() {
               </motion.svg>
               <motion.svg
                 style={{ transform: transform2 }}
-                className="clock-arrow max-w-[11.2rem] max-h-[5.4rem] duration-500"
+                className="clock-arrow max-w-[11.2rem] max-h-[5.4rem] "
                 width="180"
                 height="85"
                 viewBox="0 0 180 85"
@@ -153,7 +153,7 @@ export default function About() {
               </motion.svg>
               <motion.svg
                 style={{ transform: transform3 }}
-                className="clock-arrow max-w-[11.4rem] max-h-[11.4rem] duration-200"
+                className="clock-arrow max-w-[11.4rem] max-h-[11.4rem]"
                 width="183"
                 height="183"
                 viewBox="0 0 183 183"
@@ -169,7 +169,7 @@ export default function About() {
                 />
               </motion.svg>
               <svg
-                className="clock-center max-w-[1.9rem] max-h-[1.9rem] duration-500"
+                className="clock-center max-w-[1.9rem] max-h-[1.9rem]"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"

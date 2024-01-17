@@ -255,6 +255,16 @@ h2{
 }
 
 .blinking {
-  animation: blink 1.5s infinite;
+  animation: blink 1.8s infinite;
 }
 
+
+@keyframes blinking-underscore {
+  30% {
+    opacity: 0;
+  }
+}
+
+.blinking-underscore {
+  animation: blink 0.8s infinite;
+}

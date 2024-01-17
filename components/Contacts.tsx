@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { arr, links } from "@/constants";
 import { motion } from "framer-motion";
+import TextAnimation from "./MotionText";
 export default function Contacts() {
     const doubleArr = [...arr, ...arr];
     const variants = {
@@ -20,7 +21,7 @@ export default function Contacts() {
     }),
   };
   return (
-    <motion.section
+    <motion.footer
       initial={{opacity: 0}}
     whileInView={{opacity: 1}}
     viewport={{ once: true, amount: 0.5}}
@@ -109,7 +110,7 @@ export default function Contacts() {
             <br />
             -.-- --- ..-
           </p>
-          <span className="">&gt;</span>_
+          &gt;<span className="blinking-underscore text-primary">_</span>
         </motion.div>
       </div>
       <div className="flex justify-between px-6 relative z-[60] max-lg:pt-20 max-md:pt-10 max-md:justify-start max-md:flex-col">
@@ -121,7 +122,7 @@ export default function Contacts() {
           viewport={{ once: true, amount: 0.2}}
           transition={{ease: "easeOut", delay: 0.1, duration: 0.5}}
           >
-            <div className="w-1 h-1 mr-3 bg-[#FAEE50]"></div>
+            <div className="w-1 h-1 mr-3 bg-[#FAEE50] blinking"></div>
             <p className="text-sm text-primary">daniil.nat00@gmail.com</p>
           </motion.div>
           <motion.div 
@@ -130,7 +131,7 @@ export default function Contacts() {
           whileInView={{opacity: 1, y: 0}}
           viewport={{ once: true, amount: 0.2}}
           transition={{ease: "easeOut", delay: 0.3, duration: 0.5}}>
-            <div className="w-1 h-1 mr-3 bg-[#FAEE50]"></div>
+            <div className="w-1 h-1 mr-3 bg-[#FAEE50] blinking"></div>
             <p className="text-sm text-primary">+7 929 012 76 05</p>
           </motion.div>
         </div>
@@ -150,10 +151,10 @@ export default function Contacts() {
               target="_blank"
               rel="noopener noreferrer"
               href={l.link}
-              className="group flex items-center w-fit p-2 border border-primary hover:border-white "
+              className="group flex items-center w-fit p-2 border-[0.08rem] border-primary hover:border-white "
             >
               <p className="mr-2 text-sm text-primary group-hover:text-white">
-                {l.name}
+              <TextAnimation text={l.name}/>
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -195,6 +196,6 @@ export default function Contacts() {
           </p>
         ))}
       </div>
-    </motion.section>
+    </motion.footer>
   );
 }
