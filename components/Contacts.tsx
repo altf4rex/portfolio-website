@@ -1,9 +1,9 @@
 "use client"
 
-import Link from "next/link";
 import { arr, links } from "@/constants";
 import { motion } from "framer-motion";
 import TextAnimation from "./MotionText";
+
 export default function Contacts() {
     const doubleArr = [...arr, ...arr];
     const variants = {
@@ -147,41 +147,7 @@ export default function Contacts() {
               variants={variants}
               custom={i + 1}
             >
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={l.link}
-              className="group flex items-center w-fit p-2 border-[0.08rem] border-primary hover:border-white "
-            >
-              <p className="mr-2 text-sm text-primary group-hover:text-white">
-              <TextAnimation text={l.name}/>
-              </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_133_649)">
-                  <path
-                    className="group-hover:fill-white"
-                    d="M10.5 8.00651e-07H14.5C14.6326 8.00651e-07 14.7598 0.0526792 14.8536 0.146447C14.9473 0.240216 15 0.367393 15 0.500001V4.5C15.0002 4.59902 14.9709 4.69586 14.916 4.77825C14.8611 4.86064 14.7829 4.92487 14.6915 4.96279C14.6 5.0007 14.4993 5.01061 14.4022 4.99124C14.3051 4.97187 14.2159 4.92411 14.146 4.854L12.5 3.207L0.853999 14.854L0.145999 14.146L11.793 2.5L10.146 0.854001C10.0759 0.784071 10.0281 0.6949 10.0088 0.597791C9.98939 0.500683 9.9993 0.400011 10.0372 0.308538C10.0751 0.217064 10.1394 0.138909 10.2217 0.0839806C10.3041 0.029052 10.401 -0.000176365 10.5 8.00651e-07Z"
-                    fill="#B2B2B1"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_133_649">
-                    <rect
-                      width="15"
-                      height="15"
-                      fill="white"
-                      transform="matrix(-1 0 0 1 15 0)"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-            </Link>               
+              <TextAnimation text={l.name} link={l.link}/>        
             </motion.div>
           ))}
         </motion.div>

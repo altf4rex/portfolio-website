@@ -103,6 +103,11 @@ body {
   margin-right: auto; */
 }
 
+canvas {
+  width: 100vw;
+  height: 100vh;
+
+}
 
 h1{
   font-size: 45rem;
