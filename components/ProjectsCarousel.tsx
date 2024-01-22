@@ -12,8 +12,9 @@ export default function HorizontalScrollCarousel() {
     target: targetRef,
   });
 
+  // баг при изменении шиирины экрана 
   const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
-
+  // баг при изменении шиирины экрана 
   useEffect(() => {
     const handleResize = () => {
       setIsLgScreen(window.innerWidth >= 1024);

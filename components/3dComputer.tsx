@@ -1,29 +1,39 @@
 "use client"
 import { Canvas } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
-import { motion} from 'framer-motion-3d'
-import { PerspectiveCamera } from '@react-three/drei'
-import { MotionValue } from 'framer-motion';
+import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { Suspense } from 'react'
 
 
-  export default function Computer({mouseX, mouseY}: {mouseX: MotionValue<number>, mouseY: MotionValue<number>}) {
+  export default function Computer() {
 
     function Model() {
       const { scene } = useGLTF('/images/computer.glb')
       return (
-        <motion.primitive 
-          object={scene} 
-          rotation={[mouseY, mouseX, 0]}
+      <mesh position={[-0.2, -0.2, 0]}>
+        <primitive 
+          object={scene}
         />
+      </mesh>
       )
     }
 
     return (
-      <Canvas>
-        <PerspectiveCamera makeDefault position={[0.2, 0.2, 1.2]} />
+      <Canvas
+      frameloop='demand'
+      shadows
+      camera={{position: [0.1, 0.1, 1.2], fov: 50}}
+      >
         <ambientLight />
         <pointLight position={[10, -10, 10]} />
-        <Model />
+        <Suspense>
+        <OrbitControls 
+  enablePan={true}
+  enableZoom={true}
+  enableRotate={true}
+/>
+          <Model /> 
+          <Preload all /> 
+        </Suspense>
       </Canvas>
     )
   }
