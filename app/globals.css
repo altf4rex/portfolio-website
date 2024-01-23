@@ -107,14 +107,16 @@ canvas {
   width: 100vw;
   height: 100vh;
   position: relative;
+  right: -30vw;
   z-index: 5;
 }
 
+
 h1{
-  font-size: 45rem;
+  font-size: 55rem;
   line-height: 1;
   font-weight: 200;
-  letter-spacing: -9.2rem;
+  letter-spacing: -8rem;
 }
 
 @media screen and (max-width: 768px) {

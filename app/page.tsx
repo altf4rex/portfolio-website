@@ -9,7 +9,6 @@ import Wait from "@/components/Wait";
 export default function Home() {
   return (
     <main>
-      <Header />
       <LeftMenu />
       <Main />
       <About />

@@ -12,28 +12,35 @@ export default function HorizontalScrollCarousel() {
     target: targetRef,
   });
 
-  // баг при изменении шиирины экрана 
-  const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
-  // баг при изменении шиирины экрана 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsLgScreen(window.innerWidth >= 1024);
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 1366px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
     };
 
-    window.addEventListener('resize', handleResize);
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
     return () => {
-      window.removeEventListener('resize', handleResize);
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
-
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
   
-
   return (
     <div ref={targetRef} className="relative h-[240vh] bg-black max-lg:h-screen">
       <div className="sticky top-0 flex h-screen  items-center overflow-hidden max-lg:realtive max-lg:overflow-x-scroll max-md:h-[60vh]">
-        <motion.div style={isLgScreen ? { x } : {}} className="pr-56 max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2">
+        <motion.div style={isMobile ? {} : { x }} className="pr-56 max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2">
           <div className="flex absolute top-0 z-10 max-lg:top-24 ">
             <svg
               className="w-[25vw] max-lg:w-[30vw] max-md:w-[60vw]"

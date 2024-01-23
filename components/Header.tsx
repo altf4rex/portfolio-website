@@ -17,12 +17,12 @@ export default function Header() {
     const minutes = currentTime.getMinutes().toString().padStart(2, '0');
 
     return (
-            <header className="text-main flex items-center relative top-0 my-[3vw] mx-[6vw] max-md:my-2 max-md:mx-6 max-md:justify-between">
-                <div className="absolute left-1 max-md:static">
+            <header className="text-main flex items-center absolute z-10 w-screen top-0 my-16 max-md:my-2 max-md:justify-between">
+                <div className="absolute left-24 max-md:static">
                     <p>Daniil Natorin</p>
                     <p>[Web Developer]</p>
                 </div>
-                <div className="absolute flex right-1 max-md:static">
+                <div className="absolute flex right-24 max-md:static">
                     <div className="mr-[6vw] text-xs font-normal">
                         <p>WORKING WORLDWIDE</p>
                         <p>{hours}<span className='blinking'>:</span>{minutes}, GMT+3</p>
