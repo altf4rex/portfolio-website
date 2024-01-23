@@ -13,11 +13,9 @@ export default function Main() {
     })
     let y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"])
     return (
-        <motion.section className="h-screen flex items-center pl-[2vw] overflow-hidden relative z-0 max-md:pl-0" ref={ref} style={{y}}>
+        <motion.section className="h-screen absolute flex items-center pl-[2vw] overflow-hidden relative z-0 max-md:pl-0" ref={ref} style={{y}}>
             <h1 className="header">DN</h1>
-            <motion.div>
-                <Computer />
-            </motion.div>
+            <Computer />
         </motion.section>
     )
 }
