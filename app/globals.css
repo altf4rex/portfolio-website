@@ -82,13 +82,14 @@ html {
     background-color: #080909;
     scroll-behavior: smooth;
 }
+
 @media screen and (max-width: 1024px) {
   html {
     font-size: 1.4vw;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   html  {
     font-size: 3vw;
   }
@@ -111,17 +112,39 @@ canvas {
   z-index: 5;
 }
 
+@media screen and (max-width: 1023px) {
+  canvas {
+    right: -16vw;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  canvas {
+    right: 0;
+  }
+}
+
 
 h1{
-  font-size: 55rem;
+  font-size: 52rem;
   line-height: 1;
   font-weight: 200;
   letter-spacing: -8rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   h1  {
-    font-size: 28rem;
+    font-size: 40rem;
+    line-height: 0.8;
+    font-weight: 200;
+    letter-spacing: -7rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1  {
+    font-size: 32rem;
     line-height: 0.8;
     font-weight: 200;
     letter-spacing: -4rem;
@@ -135,7 +158,17 @@ h2{
   letter-spacing: -2rem;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1024px) {
+  h2{
+    font-size: 14rem;
+    line-height: 0.8;
+    font-weight: 200;
+    letter-spacing: -1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
   h2{
     font-size: 7.5rem;
     line-height: 0.8;
@@ -189,22 +222,6 @@ h2{
   height: 100vh;
   background-color: #080909;
 }
-
-/* @keyframes fillDash {
-  0% {
-    stroke-dashoffset: 100;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.dashed-line path {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: fillDash 2s linear forwards;
-} */
-
 
 .track-left {
   display: flex;
@@ -266,6 +283,16 @@ h2{
   animation: blink 1.8s infinite;
 }
 
+@keyframes blink-dot {
+  60% {
+    opacity: 0;
+  }
+}
+
+.blinking-dot {
+  animation: blink-dot 1.8s infinite;
+}
+
 
 @keyframes blinking-underscore {
   30% {
@@ -275,4 +302,19 @@ h2{
 
 .blinking-underscore {
   animation: blink 0.8s infinite;
+}
+
+
+.border-hover{
+  border-color: #B2B2B1;
+}
+
+@keyframes border-blink {
+  0% { border-color: transparent; }
+  50% { border-color: #EBEBEB; }
+  100% { border-color: transparent; }
+}
+
+.border-hover:hover {
+  animation: border-blink 0.09s step-end 2;
 }

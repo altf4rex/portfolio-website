@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { projects } from "@/constants";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 
 export default function HorizontalScrollCarousel() {
   const targetRef = useRef(null);
@@ -35,13 +35,14 @@ export default function HorizontalScrollCarousel() {
     };
   }, []);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
-  
+  const xMobile = useMotionValue(0)
+   const x = useTransform(isMobile ? xMobile : scrollYProgress, [0, 1], ["1%", "-50%"]);
+
   return (
-    <div ref={targetRef} className="relative h-[240vh] bg-black max-lg:h-screen">
-      <div className="sticky top-0 flex h-screen  items-center overflow-hidden max-lg:realtive max-lg:overflow-x-scroll max-md:h-[60vh]">
-        <motion.div style={isMobile ? {} : { x }} className="pr-56 max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2">
-          <div className="flex absolute top-0 z-10 max-lg:top-24 ">
+    <div ref={targetRef} className="relative h-[240vh] bg-black max-[1366px]:h-screen max-md:h-[80vh] max-sm:h-[63vh]">
+      <div className="sticky top-0 flex h-screen  items-center overflow-hidden max-[1366px]:realtive max-[1366px]:overflow-x-scroll max-md:h-[80vh]  max-sm:h-[65vh]">
+        <motion.div style={isMobile ? {} : { x: x }} className="pr-56  max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2">
+          <div className="flex absolute top-0 z-10 max-[1366px]:top-24">
             <svg
               className="w-[25vw] max-lg:w-[30vw] max-md:w-[60vw]"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +54,7 @@ export default function HorizontalScrollCarousel() {
               <path
                 d="M0 1L471 0.999959"
                 stroke="#B2B2B1"
-                stroke-dasharray="4 4"
+                strokeDasharray="4 4"
               />
             </svg>
             <svg
@@ -67,7 +68,7 @@ export default function HorizontalScrollCarousel() {
               <path
                 d="M0 1L321 1.00003"
                 stroke="#B2B2B1"
-                stroke-dasharray="4 4"
+                strokeDasharray="4 4"
               />
             </svg>
             <svg
@@ -81,7 +82,7 @@ export default function HorizontalScrollCarousel() {
               <path
                 d="M0 1L490 0.999957"
                 stroke="#B2B2B1"
-                stroke-dasharray="4 4"
+                strokeDasharray="4 4"
               />
             </svg>
             {[...Array(projects.length + 1)].map((a, i) => (
@@ -97,7 +98,7 @@ export default function HorizontalScrollCarousel() {
                   <path
                     d="M0 1L2766 1.00024"
                     stroke="#B2B2B1"
-                    stroke-dasharray="4 4"
+                    strokeDasharray="4 4"
                   />
                 </svg>
             ))}
@@ -115,13 +116,13 @@ export default function HorizontalScrollCarousel() {
                 <path d="M257 549L253 553L249 549" stroke="#B2B2B1"/>
                 <path d="M257 609L253 613L249 609" stroke="#B2B2B1"/>
                 <path d="M257 559L253 563L249 559" stroke="#B2B2B1"/>
-                <path d="M267 614L267 0.999999" stroke="#B2B2B1" stroke-dasharray="4 4"/>
-                <path d="M267 1H6.17504e-05" stroke="#B2B2B1" stroke-dasharray="4 4"/>
+                <path d="M267 614L267 0.999999" stroke="#B2B2B1" strokeDasharray="4 4"/>
+                <path d="M267 1H6.17504e-05" stroke="#B2B2B1" strokeDasharray="4 4"/>
               </svg>
           </div>
           <div className="flex mt-36 relative z-50">
             {projects.map((p) => (
-              <div className="flex flex-col">
+              <div className="flex flex-col" key={p.id}>
                 <div className="flex items-end mr-16">
                   <Link
                     href={p.link}

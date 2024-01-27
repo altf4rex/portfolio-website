@@ -146,9 +146,7 @@ export default function About() {
                 <path
                   d="M4.44042 0.518641C2.92681 -0.155262 1.15348 0.525456 0.479579 2.03907C-0.194325 3.55268 0.486393 5.32601 2 5.99991L4.44042 0.518641ZM2 5.99991L177.401 84.0933L179.841 78.6121L4.44042 0.518641L2 5.99991Z"
                   fill="#FEFEFE"
-                  // stroke="#080909" 
-                  // stroke-width="2" 
-                  stroke-linecap="square"
+                  strokeLinecap="square"
                 />
               </motion.svg>
               <motion.svg
@@ -182,7 +180,7 @@ export default function About() {
                   r="13"
                   fill="#FAEE50"
                   stroke="#080909"
-                  stroke-width="4"
+                  strokeWidth="4"
                 />
               </svg>
             </div>
