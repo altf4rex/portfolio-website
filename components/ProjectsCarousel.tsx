@@ -153,7 +153,7 @@ export default function HorizontalScrollCarousel() {
                     />
                   </Link>
                 </div>
-                <p className="text-main mt-2 uppercase">//{p.name}</p>
+                <p className="text-main mt-2 uppercase">{"//"}{p.name}</p>
               </div>
             ))}
           </div>

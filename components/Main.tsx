@@ -28,7 +28,7 @@ export default function Main() {
                     <path d="M1 367L0.999984 -5.24521e-06" stroke="#B2B2B1" strokeDasharray="4 4"/>
                 </svg>
                 <p className="text-main">Front-end is not just a job, <br/> 
-                it's a mindset.</p>
+                it&apos;s a mindset.</p>
             </div>
             <Computer />
         </motion.section>

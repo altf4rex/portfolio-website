@@ -103,7 +103,7 @@ export default function Contacts() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ ease: "easeOut", duration: 0.8 }}
         >
-          <p>//CHECKING...</p>
+          <p>{"//CHECKING..."}</p>
           <p className="text-primary">I am ready to talk in anytime.</p>
           <br />
           <span>&lt;</span>
