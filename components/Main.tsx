@@ -16,7 +16,7 @@ export default function Main() {
         <motion.section className="h-screen flex flex-col overflow-hidden relative z-0" ref={ref} style={{y}}>
             <div className="hidden max-[1366px]:block max-[1366px]:w-screen max-[1366px]:h-screen max-[1366px]:absolute max-[1366px]:top-0 max-[1366px]:left-0 max-[1366px]:z-10"></div>
             <Header />
-            <h1 className="header absolute z-0 left-20 top-[65%] -translate-y-1/2 max-lg:left-2 max-lg:top-[36%] max-md:top-[34%] max-md:-left-9">DN</h1> 
+            <h1 className="header absolute z-0 left-20 top-[62%] -translate-y-1/2 max-lg:left-2 max-lg:top-[36%] max-md:top-[34%] max-md:-left-9">DN</h1> 
             <div className="hidden absolute bottom-12 left-3 max-h-[36vh] max-md:flex  max-sm:bottom-24 ">
             <svg width="20" height="367" viewBox="0 0 20 367" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.9998 342L14.9998 346L18.9998 342" stroke="#B2B2B1"/>
