@@ -68,7 +68,7 @@ export default function About() {
           <div className="absolute bottom-8 right-20 text-right text-xs text-secondary max-md:bottom-0 max-md:right-4">
             Front-end is not just a job,
             <br />
-            it's a mindset.
+            it&apos;s a mindset.
           </div>
         </div>
         <div 
@@ -80,11 +80,11 @@ export default function About() {
           transition={{ duration: 0.8}}
           className="text-main max-w-[50%] mt-40 mr-20 max-md:max-w-[90%] max-md:mt-10 max-md:mr-2">
             <span className="text-secondary">
-              //DESCRIPTION
+            {"//DESCRIPTION"}
               <br />
             </span>
             <span>
-            Hey! I'm a highly motivated Frontend developer with more than 1 years of experience. I specialize in building web applications using React/Next.js. <br/> I am a purposeful and curious person who is always open to new knowledge and challenges. 
+            Hey! I&apos;m a highly motivated Frontend developer with more than 1 years of experience. I specialize in building web applications using React/Next.js. <br/> I am a purposeful and curious person who is always open to new knowledge and challenges. 
               <br />
             </span>
             <span className="text-secondary">
@@ -191,7 +191,7 @@ export default function About() {
           </motion.div>
         </div>
         <div className="mt-16 -ml-10 text-xs text-secondary max-md:ml-8 max-md:mt-0">
-            INIT
+            INIT&apos;
             <br />
             DATA TYPE
             <br />
