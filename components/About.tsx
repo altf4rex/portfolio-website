@@ -183,7 +183,7 @@ export default function About() {
             </div>
             <Image
               className="max-w-[26rem] max-h-[24rem]"
-              src="\images\group 16.svg"
+              src="\images\Group 16.svg"
               alt="about me"
               width={494}
               height={469}
