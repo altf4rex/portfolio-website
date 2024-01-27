@@ -84,10 +84,7 @@ export default function About() {
               <br />
             </span>
             <span>
-              Lorem ipsum dolor sit amet consectetur. Sociis sit amet massa
-              etiam urna in. Curabitur morbi faucibus ut mattis morbi eu.
-              Dapibus condimentum eget est risus fermentum. Cras fermentum
-              sagittis faucibus ligula sed pellentesque eu.
+            Hey! I'm a highly motivated Frontend developer with more than 1 years of experience. I specialize in building web applications using React/Next.js. <br/> I am a purposeful and curious person who is always open to new knowledge and challenges. 
               <br />
             </span>
             <span className="text-secondary">
