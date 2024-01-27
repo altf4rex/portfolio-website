@@ -38,8 +38,8 @@ import { Suspense, useEffect, useState } from 'react'
     }, []);
     
     function Model() {
-      const { scene } = useGLTF('/images/computer.glb');
-
+      const { scene } = useGLTF('/images/3dcomputer.glb');
+      
       return (
       <mesh 
       scale={isMobile ? 0.6 : isTablet ? 0.8 : 1}
