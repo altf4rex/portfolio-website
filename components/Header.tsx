@@ -3,16 +3,20 @@ import { useEffect, useState } from 'react';
 
 
 export default function Header() {
-    const [currentTime, setCurrentTime] = useState(new Date());
+    const [currentTime, setCurrentTime] = useState<Date | null>(null);
+
   
     useEffect(() => {
       const intervalId = setInterval(() => {
         setCurrentTime(new Date());
       }, 1000);
   
-      
       return () => clearInterval(intervalId);
     }, []);
+
+    if (!currentTime) {
+      return null; // или отображение загрузчика
+    }
     const hours = currentTime.getHours().toString().padStart(2, '0'); 
     const minutes = currentTime.getMinutes().toString().padStart(2, '0');
 

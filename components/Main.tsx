@@ -1,6 +1,6 @@
 "use client"
 import { motion, useScroll, useTransform} from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import Computer from "./3dComputer";
 import Header from "./Header";
 
