@@ -3,6 +3,7 @@ import { Canvas  } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import { Suspense, useEffect, useState } from 'react'
 
+
   export default function Computer() {
 
     const [isTablet, setIsTablet] = useState(false);
@@ -57,7 +58,7 @@ import { Suspense, useEffect, useState } from 'react'
       shadows
       camera={{position: [0.64, -0.25, 1.2], fov: 50}}
       >
-        <Suspense>
+
         <OrbitControls 
         enablePan={false}
         enableZoom={false}
@@ -67,7 +68,7 @@ import { Suspense, useEffect, useState } from 'react'
               <spotLight position={[0.2, -0.2, 1]} angle={Math.PI / 4} penumbra={1} intensity={1.5} castShadow />
           <Model />
           <Preload all /> 
-        </Suspense>
+
       </Canvas>
     )
   }
