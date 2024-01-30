@@ -2,6 +2,7 @@
 import { Canvas  } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import { Suspense } from 'react'
+import ModelLoader from './ModelLoader';
 
   export default function Computer() {
 
@@ -25,7 +26,7 @@ import { Suspense } from 'react'
       shadows
       camera={{position: [0.64, -0.1, 1.15], fov: 50}}
       >
-        <Suspense>
+        <Suspense fallback={<ModelLoader />}>
         <OrbitControls 
         enablePan={false}
         enableZoom={false}

@@ -48,10 +48,10 @@ export default function Main() {
         style={{ y }}
         >
       <Header />
-      <h1 className="header absolute z-0 left-20 top-[62%] -translate-y-1/2 max-lg:left-2 max-lg:top-[36%] max-md:top-[34%] max-md:-left-9">
+      <h1 className="header absolute z-0 left-20 top-[62%] -translate-y-1/2 max-lg:left-2 max-lg:top-[36%] max-sm:top-[34%] max-md:-left-9">
         DN
       </h1>
-      <div className="hidden absolute bottom-12 left-3 max-h-[36vh] max-md:flex  max-sm:bottom-24 ">
+      <div className="hidden absolute bottom-24 left-3 max-h-[36vh] max-sm:flex">
         <svg
           width="20"
           height="367"
@@ -75,16 +75,13 @@ export default function Main() {
             strokeDasharray="4 4"
           />
         </svg>
-        <p className="text-main">
-          Front-end is not just a job, <br />
-          it&apos;s a mindset.
-        </p>
+
       </div>
       {
         !isTablet ? 
         <Computer /> : 
           <Image
-            className="min-w-[68%] min-h-[48%] absolute max-[1366px]:-bottom-24 max-[1366px]:-right-[30rem] max-lg:-bottom-8 max-lg:-right-80 max-md: max-md:min-w-[120%] max-md:min-h-[50%] max-md:-bottom-8 max-md:-right-40"
+            className="absolute -bottom-24 -right-[30rem] max-lg:min-w-[1000px] max-lg:min-h-[600px] max-lg:-bottom-8 max-lg:-right-96 max-md:-bottom-8 max-md:-right-56 max-sm:min-w-[56rem] max-sm:min-h-[35rem] max-sm:-right-64"
             src="/images/Image_computer4.png"
             alt="computer"
             width={1920}
