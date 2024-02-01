@@ -30,7 +30,7 @@ export default function Wait() {
           className="max-md:mb-36"
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
-          viewport={{ once: true, amount: 0.8  }}
+          viewport={{ once: true, amount: 0.5  }}
           transition={{ duration: 0.8, delay: 0.2}}
         >
           <p>+9</p>
@@ -61,7 +61,7 @@ export default function Wait() {
           className="flex flex-col items-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.4 }}
         >
           <motion.div variants={variants} custom={1.2}>
             standby progress
@@ -130,7 +130,7 @@ export default function Wait() {
         className="max-md:mb-36"
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.2}}>
           <p>
             from

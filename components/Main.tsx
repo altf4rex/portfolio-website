@@ -41,9 +41,9 @@ export default function Main() {
 
   return (
     <section
-      className="w-screen h-screen top-0 left-0 relative z-0 flex flex-col overflow-hidden">
+      className="w-screen min-h-screen top-0 left-0 relative z-0 flex flex-col overflow-hidden">
         <motion.div
-        className="w-screen h-screen absolute"
+        className="w-screen min-h-screen absolute"
         ref={ref}
         style={{ y }}
         >

@@ -26,7 +26,7 @@ export default function Contacts() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}
       id="contacts"
-      className="h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black "
+      className="min-h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black "
     >
       <motion.div
         className="absolute -right-[54rem]  max-2xl:-right-[80rem] max-xl:-right-[110rem]"
@@ -60,7 +60,7 @@ export default function Contacts() {
         className="absolute -right-[28rem] max-2xl:-right-[45rem] max-xl:-right-[60rem]"
       >
         <svg
-          className="circle-small "
+          className="circle-small"
           width="1028"
           height="1028"
           viewBox="0 0 1028 1028"
@@ -100,7 +100,7 @@ export default function Contacts() {
           className="text-sm text-secondary pr-10 max-lg:pr-0 max-lg:pl-8 max-md:pl-4 max-md:mb-5"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ ease: "easeOut", duration: 0.8 }}
         >
           <p>{"//CHECKING..."}</p>
@@ -115,13 +115,13 @@ export default function Contacts() {
           &gt;<span className="blinking-underscore text-primary">_</span>
         </motion.div>
       </div>
-      <div className="flex justify-between px-6 relative z-[60] max-lg:pt-20 max-md:pt-10 max-md:justify-start max-md:flex-col">
+      <div className="flex justify-between px-6 relative z-[60] max-lg:pt-20 max-md:pt-10 max-md:justify-start max-md:flex-col max-lg:mb-10">
         <div className="flex max-md:flex-col">
           <motion.div
             className="flex items-center w-fit p-2 mr-4 border border-primary"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ ease: "easeOut", delay: 0.1, duration: 0.5 }}
           >
             <div className="w-1 h-1 mr-3 bg-[#FAEE50] blinking"></div>
@@ -131,7 +131,7 @@ export default function Contacts() {
             className="flex items-center w-fit p-2 mr-4 border border-primary max-md:mt-4"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ ease: "easeOut", delay: 0.3, duration: 0.5 }}
           >
             <div className="w-1 h-1 mr-3 bg-[#FAEE50] blinking-dot"></div>

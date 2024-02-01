@@ -11,9 +11,9 @@ import ModelLoader from './ModelLoader';
       
       return (
       <mesh 
-      scale={0.2}
-      position={[-0.02, -0.46, 0]}>
+      scale={0.2}>
         <primitive 
+           position={[0, -2, 0]}
           object={scene}
         />
       </mesh>
@@ -24,7 +24,7 @@ import ModelLoader from './ModelLoader';
       <Canvas
       frameloop='demand'
       shadows
-      camera={{position: [0.64, -0.1, 1.15], fov: 50}}
+      camera={{position: [0.4, 0, 1.2], fov: 50}}
       >
         <Suspense fallback={<ModelLoader />}>
         <OrbitControls 
