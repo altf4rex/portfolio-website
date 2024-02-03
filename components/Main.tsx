@@ -48,7 +48,7 @@ export default function Main() {
         style={{ y }}
         >
       <Header />
-      <h1 className="header absolute z-0 left-20 top-[62%] -translate-y-1/2 max-lg:left-2 max-lg:top-[36%] max-sm:top-[34%] max-md:-left-9">
+      <h1 className="header absolute z-0 left-20 top-[62%] -translate-y-1/2 max-lg:left-2 max-lg:top-1/2 max-sm:top-[34%] max-md:-left-9">
         DN
       </h1>
       <div className="hidden absolute bottom-24 left-3 max-h-[36vh] max-sm:flex">
@@ -81,7 +81,7 @@ export default function Main() {
         !isTablet ? 
         <Computer /> : 
           <Image
-            className="absolute -bottom-24 -right-[30rem] max-lg:min-w-[1000px] max-lg:min-h-[600px] max-lg:-bottom-8 max-lg:-right-96 max-md:-bottom-8 max-md:-right-56 max-sm:min-w-[56rem] max-sm:min-h-[35rem] max-sm:-right-64"
+            className="absolute -bottom-24 -right-[30rem] max-lg:min-w-[80rem] max-lg:min-h-[45rem] max-lg:-bottom-8 max-lg:-right-96 max-md:min-w-[60rem] max-md:min-h-[35rem] max-md:-right-80"
             src="/images/Image_computer4.png"
             alt="computer"
             width={1920}

@@ -24,7 +24,7 @@ export default function Contacts() {
     <motion.footer
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
       id="contacts"
       className="min-h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black "
     >
@@ -115,7 +115,7 @@ export default function Contacts() {
           &gt;<span className="blinking-underscore text-primary">_</span>
         </motion.div>
       </div>
-      <div className="flex justify-between px-6 relative z-[60] max-lg:pt-20 max-md:pt-10 max-md:justify-start max-md:flex-col max-lg:mb-10">
+      <div className="flex justify-between px-6 relative z-[60] max-lg:pt-20 max-lg:mb-10 max-lg:justify-start max-lg:flex-col">
         <div className="flex max-md:flex-col">
           <motion.div
             className="flex items-center w-fit p-2 mr-4 border border-primary"
@@ -139,7 +139,7 @@ export default function Contacts() {
           </motion.div>
         </div>
         <motion.div
-          className="flex relative z-[60] max-md:mt-6"
+          className="flex relative z-[60] max-lg:mt-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
