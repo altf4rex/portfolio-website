@@ -3,7 +3,7 @@ import './globals.css'
 
 
 export const metadata: Metadata = {
-  title: 'altf4rex portfolio',
+  title: 'daniiln-portfolio',
   description: 'About me and my experience',
 }
 
