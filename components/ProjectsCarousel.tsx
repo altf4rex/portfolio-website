@@ -122,7 +122,7 @@ export default function HorizontalScrollCarousel() {
               </svg>
           </div>
             {projects.map((p) => (
-              <div className="flex flex-col" key={p.id}>
+              <div className="relative z-50 flex flex-col" key={p.id}>
                 <div className="flex items-end mr-16">
                   <Link
                     href={p.link}

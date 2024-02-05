@@ -39,7 +39,7 @@ export const links = [
     {
         id: 3,
         name: "telegram", 
-        link: ""
+        link: "https://t.me/daniil_nat00"
     }
 ];
 
