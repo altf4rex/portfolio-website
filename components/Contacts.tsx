@@ -3,6 +3,7 @@
 import { arr, links } from "@/constants";
 import { motion } from "framer-motion";
 import TextAnimation from "./MotionText";
+import Link from "next/link";
 
 export default function Contacts() {
   const doubleArr = [...arr, ...arr];
@@ -29,7 +30,7 @@ export default function Contacts() {
       className="min-h-screen flex justify-center flex-col overflow-hidden relative z-50 bg-black "
     >
       <motion.div
-        className="absolute -right-[54rem]  max-2xl:-right-[80rem] max-xl:-right-[110rem]"
+        className="absolute -right-[54rem] max-2xl:-right-[80rem] max-xl:-right-[110rem]"
         initial={{ opacity: 0, x: 200 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -155,6 +156,22 @@ export default function Contacts() {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+      <div className="absolute bottom-2 left-6 md:bottom-10 max-sm:bottom-7">
+        <p className="text-sm text-secondary">Designed by 
+          <Link 
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/dvst/"
+          > <span className="underline">Alexander</span> 
+          </Link>
+          <br/> Assembled by 
+          <Link 
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/daniil-nat00/"
+          > <span className="underline">Me</span> 
+          </Link></p>
       </div>
       <div className="track-right absolute bottom-0 flex z-[60]">
         {doubleArr.map((a, index) => (

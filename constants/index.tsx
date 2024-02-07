@@ -13,7 +13,7 @@ export const projects = [
         img: "/images/arc.jpg",
         imgMobile: "/images/arc-mobile.jpg",
         alt: "Architectural website", 
-        link: "https://arc-nine-xi.vercel.app/"
+        link: "https://architectural-studio.vercel.app/"
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ export const links = [
     {
         id: 2,
         name: "linkedin", 
-        link: "https://www.linkedin.com/in/daniil-n-a88140280/"
+        link: "https://www.linkedin.com/in/daniil-nat00/"
     },
     {
         id: 3,

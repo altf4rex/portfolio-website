@@ -36,10 +36,10 @@ export default function HorizontalScrollCarousel() {
   }, []);
 
   const xMobile = useMotionValue(0)
-   const x = useTransform(isMobile ? xMobile : scrollYProgress, [0, 1], ["1%", "-50%"]);
+   const x = useTransform(isMobile ? xMobile : scrollYProgress, [0, 1], ["2%", "-50%"]);
 
   return (
-    <div ref={targetRef} className="relative h-[240vh] bg-black max-[1366px]:h-screen max-md:h-[80vh] max-sm:h-[63vh]">
+    <div ref={targetRef} className="relative h-[260vh] bg-black max-[1366px]:h-screen max-md:h-[80vh] max-sm:h-[63vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden max-[1366px]:realtive max-[1366px]:overflow-x-scroll max-lg:min-h-screen max-md:min-h-[80vh] max-sm:min-h-[65vh]">
         <motion.div style={isMobile ? {} : { x: x }} className="pr-56 max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2 max-lg:mb-36">
           <div className="mt-36 relative z-50 flex ">
