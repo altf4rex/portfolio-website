@@ -18,8 +18,8 @@ export const projects = [
     {
         id: 3,
         name: "Next.js Portfolio website", 
-        img: "/images/portfolio-website.jpg",
-        imgMobile: "/images/portfolio-website.jpg",
+        img: "/images/portfolio-website-d.jpg",
+        imgMobile: "/images/portfolio-website-m.jpg",
         alt: "Portfolio website", 
         link: ""
     }
