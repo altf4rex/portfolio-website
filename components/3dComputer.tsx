@@ -7,7 +7,7 @@ import ModelLoader from './ModelLoader';
   export default function Computer() {
 
     function Model() {
-      const { scene } = useGLTF('/images/untitled.glb');
+      const { scene } = useGLTF('/images/compick.glb');
       
       return (
       <mesh 

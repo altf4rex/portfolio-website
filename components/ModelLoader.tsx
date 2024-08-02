@@ -28,7 +28,7 @@ const ModelLoader = () => {
               animate={{
                 opacity: [0, 1],
               }}
-              transition={{ repeat: Infinity, duration: 1.2 }}
+              transition={{ repeat: Infinity, duration: 1.3 }}
             >
               .
             </motion.div>
@@ -36,7 +36,7 @@ const ModelLoader = () => {
               animate={{
                 opacity: [0, 1],
               }}
-              transition={{ repeat: Infinity, duration: 1.2 }}
+              transition={{ repeat: Infinity, duration: 1.4 }}
             >
               .
             </motion.div>
