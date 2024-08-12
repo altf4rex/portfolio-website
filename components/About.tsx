@@ -84,7 +84,7 @@ export default function About() {
               <br />
             </span>
             <span>
-            Hey! I&apos;m a highly motivated Frontend developer with more than 1 years of experience. I specialize in building web applications using React/Next.js. <br/> I am a purposeful and curious person who is always open to new knowledge and challenges. 
+            Hey! I&apos;m a highly motivated Frontend developer with more than 2 years of experience. I specialize in building web applications using React/Next.js. <br/> I am a purposeful and curious person who is always open to new knowledge and challenges. 
               <br />
             </span>
             <span className="text-secondary">
