@@ -86,10 +86,10 @@ export default function HorizontalScrollCarousel() {
                 strokeDasharray="4 4"
               />
             </svg>
-            {[...Array(projects.length + 1)].map((a, i) => (
+            {[...Array(projects.length)].map((a, i) => (
                 <svg
                   key={i}
-                  className="mt-6 w-[22vw] max-[1820px]:w-[24vw] max-lg:w-[38vw] max-md:w-[60vw]"
+                  className="mt-6 w-[20vw] max-[1820px]:w-[24vw] max-lg:w-[38vw] max-md:w-[67vw]"
                   xmlns="http://www.w3.org/2000/svg"
                   width="514"
                   height="2"
@@ -131,11 +131,11 @@ export default function HorizontalScrollCarousel() {
                     className="hover:brightness-75"
                   >
                     <Image
-                      className="mr-10 object-cover max-w-[30rem] max-h-[30rem] max-md:w-[20rem] max-md:h-[20rem]"
+                      className="mr-12 object-none max-w-[34rem] h-[20rem] max-md:w-[26rem] max-md:h-[16rem]"
                       src={p.img}
                       alt={p.alt}
-                      width={500}
-                      height={500}
+                      width={540}
+                      height={400}
                     />
                   </Link>
                 </div>
