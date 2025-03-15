@@ -8,7 +8,7 @@ export const projects = [
     },
     {
         id: 2,
-        name: "Expresss.js, MongoDB and Next.js - Note Manager app", 
+        name: "Expresss.js, MongoDB and Nuxt.js - Note Manager app", 
         img: "/images/NoteManager.jpg",
         alt: "Note Manager app", 
         link: "https://note-app-nuxt-js.vercel.app/"
