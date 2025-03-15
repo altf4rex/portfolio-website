@@ -42,7 +42,7 @@ export default function HorizontalScrollCarousel() {
     <div ref={targetRef} className="relative h-[260vh] bg-black max-[1366px]:h-screen max-md:h-[80vh] max-sm:h-[63vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden max-[1366px]:realtive max-[1366px]:overflow-x-scroll max-lg:min-h-screen max-md:min-h-[80vh] max-sm:min-h-[65vh]">
         <motion.div style={isMobile ? {} : { x: x }} className="pr-56 max-[1820px]:pr-96 max-lg:pr-20 max-md:pr-10 max-md:pl-2 max-lg:mb-36">
-          <div className="mt-36 relative z-50 flex ">
+          <div className="mt-36 relative z-50 flex">
           <div className="flex absolute -top-24 z-10">
             <svg
               className="w-[25vw] max-lg:w-[30vw] max-md:w-[60vw]"
@@ -136,20 +136,6 @@ export default function HorizontalScrollCarousel() {
                       alt={p.alt}
                       width={500}
                       height={500}
-                    />
-                  </Link>
-                  <Link
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:brightness-75"
-                  >
-                    <Image
-                      className="object-cover h-screen max-w-[21rem] max-h-[21rem] max-md:w-[16rem] max-md:h-[16rem]"
-                      src={p.imgMobile}
-                      alt={p.alt}
-                      width={400}
-                      height={400}
                     />
                   </Link>
                 </div>

@@ -1,6 +1,20 @@
 export const projects = [
     {
         id: 1,
+        name: "Expresss.js, PostgreSQL and Next.js - Task Manager app", 
+        img: "/images/TaskManager.jpg",
+        alt: "Task Manager app", 
+        link: "https://task-manager-frontend-seven-zeta.vercel.app/"
+    },
+    {
+        id: 2,
+        name: "Expresss.js, MongoDB and Next.js - Note Manager app", 
+        img: "/images/NoteManager.jpg",
+        alt: "Note Manager app", 
+        link: "https://note-app-nuxt-js.vercel.app/"
+    },
+    {
+        id: 3,
         name: "Next.js E-commerce website", 
         img: "/images/E-commerce.jpg",
         imgMobile: "/images/E-commerce-mobile.jpg",
@@ -8,7 +22,7 @@ export const projects = [
         link: "https://e-commerce-q6be.vercel.app/"
     },
     {
-        id: 2,
+        id: 4,
         name: "Next.js Architectural website", 
         img: "/images/arc.jpg",
         imgMobile: "/images/arc-mobile.jpg",
@@ -16,7 +30,7 @@ export const projects = [
         link: "https://architectural-studio.vercel.app/"
     },
     {
-        id: 3,
+        id: 5,
         name: "Next.js Portfolio website", 
         img: "/images/portfolio-website-d.jpg",
         imgMobile: "/images/portfolio-website-m.jpg",
